@@ -1,3 +1,9 @@
+# Current floor-support revision
+
+See [the floor validation report](review/floor-validation.md) and [current hashes](review/floor-provenance.json) for the IsoRimZ candidate. The following original-candidate report and its hashes are retained as historical evidence; its floor exclusion does not describe the new revision.
+
+---
+
 # Verification, 2026-11-07
 
 RimWorld 1.7.5000 rev1275 / Waylith, Windows. Host source base: `peren717/IsoRim-1.7@4cc784a669ef049ba081296ff94f50bf9cc4dd9d`; candidate branch `feat/static-model-extension-api`. API version remains 60 pending the maintainer's merge-time version assignment.

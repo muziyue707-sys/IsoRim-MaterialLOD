@@ -1,0 +1,75 @@
+{
+  "tested_on": "2026-11-07",
+  "host_base": "4cc784a669ef049ba081296ff94f50bf9cc4dd9d",
+  "host_sha256": "91f3ee4309c28e1112cc062c7e8b65749d65fb660034802fd5e7731ac8f64083",
+  "addon_sha256": "5eaf00c4ed4f0b8202b148fc25eb23f965774d3095e6452a70b87871980b2740",
+  "tests_sha256": "5ea0f37a72a1cebf1830408a6c4b834c968fa4227e0df24869449cd0cde598d0",
+  "projectz_sha256": "dfa0f06a0ff6b4c500d9354145562753baa976a97fed80ae30c2a839dd7c2c45",
+  "unsupported_host_sha256": "ac0685811fbe5de0f22d0b3c22b8e5f223e0175d098b3c8509837f403376ab5e",
+  "runs": {
+    "floors": "floor-run04-final",
+    "no_floors": "lod-run05-floors-regression",
+    "unsupported_host": "compare-unsupported-fresh"
+  },
+  "floor_phases": 21,
+  "upper_buildings": 258,
+  "hidden_projection_delta": 0,
+  "addon_max_dirty_sections_per_frame": 2,
+  "all_runtime_assertions": "PASS",
+  "unsupported_host": "PASS_WARNING_ONCE_NATIVE_DRAW",
+  "production_harmony_or_projectz_reference": false,
+  "static_scan": "PASS",
+  "xml_parse": "PASS",
+  "protected_floor_run": {
+    "workshop": {
+      "files": 3040,
+      "pass": true,
+      "missing": [],
+      "changed": []
+    },
+    "protected": {
+      "files": 648,
+      "pass": true,
+      "missing": [],
+      "changed": []
+    }
+  },
+  "protected_fallback_run": {
+    "protected": {
+      "pass": true,
+      "missing": [],
+      "files": 625,
+      "changed": []
+    },
+    "workshop": {
+      "pass": true,
+      "missing": [],
+      "files": 3040,
+      "changed": []
+    }
+  },
+  "no_floor_protection_note": "Formal save state changed during user-confirmed Steam account switch; 37 missing paths and five changed Autosaves. No task restoration performed; isolated save exists; Workshop unchanged.",
+  "raw_screenshots": {
+    "01_upper_near_lower_coarse.png": "6d1e82fefbf09e43572b06add6c89c858e44574f27ce2f32c2687635f5a53211",
+    "07_peek_upper.png": "b57b86bf299875a1a2751b5671528ae891cfa9c3ff41276c5989ee3286f5ff11",
+    "16_upper_slab.png": "1fa8374bd3cf36f211f73e9d66c3417dab74c381073f448d44eb7d338c70b018",
+    "17_slab_hidden.png": "d47e8ccff3d7d50278a5c4c71d193dbdb848a22c90aabd46a2bede4cbf35b2d7"
+  },
+  "artwork": {
+    "mode": "built-in image_gen",
+    "status": "concept illustrations, not runtime/topology evidence",
+    "detail_pngs": {
+      "01-normal-mapping.png": "5e66335344e58a47463d9ff4fec3a86c2428abaa5e2558179a45f320ffe9bd8c",
+      "02-lod-levels.png": "d36b94f4fc421af8f144d75c70ec94a80da1f5092bb9cf7e4bfb4ff7348708d2",
+      "03-floor-policy.png": "82186b07a44caff44282d38dd08678b88d91f6312ea86ae965d6e328f8bdb3b6"
+    },
+    "prompts": "workshop/details/prompt-*.txt"
+  },
+  "performance_claim": false,
+  "steam_published": false,
+  "package": "IsoRim-MaterialLOD-0.3.0-floors.zip",
+  "package_sha256": "862565642470c1e9976d6f72285167d816f48d3d9928a782994b180c386d42c7",
+  "package_bytes": 3940016,
+  "zip_crc": "PASS",
+  "redistributed_game_assemblies": false
+}

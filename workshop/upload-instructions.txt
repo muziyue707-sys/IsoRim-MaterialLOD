@@ -1,0 +1,31 @@
+工坊发布素材 / Workshop publishing assets
+
+中文
+1. 标题：复制 title.txt 的整行内容。
+2. 正文：复制 description.bbcode.txt 的完整内容，已按“中文 → English”排列，保留 BBCode 标签。
+3. 工坊封面：选择 cover.jpg（1754 × 897，241922 字节）。不要选择较大的 PNG 原图上传；mod/About/Preview.png 是游戏内 Mod 列表的预览图。
+4. 当前为测试版，依赖配套 IsoRim API 分支。普通工坊版暂不能直接使用；在依赖解决前建议以私密或不公开方式供测试。
+5. 这些文件是发布素材，并未创建或更新 Steam 工坊条目。没有生成 PublishedFileId.txt。上传后请保留 Steam 返回的真实条目编号，勿复制其他 Mod 的编号。
+6. API 合并后，先更新兼容检查并重新验证，再修改测试版说明、封面和发布状态。
+
+English
+1. Title: copy the single line from title.txt.
+2. Description: copy the complete description.bbcode.txt, Chinese first and English second, keeping the BBCode tags.
+3. Workshop cover: choose cover.jpg (1754 × 897, 241922 bytes). Do not upload the larger original PNG; mod/About/Preview.png is the in-game mod-list preview.
+4. This test build requires the companion IsoRim API branch. Standard Workshop IsoRim is currently insufficient. Private or unlisted testing is recommended until the dependency is available.
+5. These are publishing assets. No Steam Workshop item has been created or updated and no PublishedFileId.txt has been generated. Keep the actual item ID returned by Steam; never copy another mod's ID.
+6. After the API merge, update compatibility checks and revalidate before changing test-build wording, cover, and visibility.
+
+Artwork / 封面制作
+Edited from the user-provided screenshot with the built-in image_gen tool. Reference: cover-reference.png. Initial edit prompt: cover-prompt.txt. Final upper-wireframe edit: cover-prompt-upper-wireframe.txt.
+Original PNG is retained as mod/About/Preview.png; cover.jpg is a JPEG encoding of the same composition, without cropping, resizing, or changing the design.
+封面由内置 image_gen 基于用户截图编辑；提示词见 cover-prompt.txt，追加上半部分线框的提示词见 cover-prompt-upper-wireframe.txt。PNG 原图保存为 mod/About/Preview.png；JPG 仅转换编码，未裁切、缩放或改变画面。
+The diagonal split and wireframes are illustrative, not actual mesh topology captures. / 斜分区与线框是展示示意，不是真实网格拓扑截图。
+
+Steam preview image reference / Steam 预览图要求：
+https://partner.steamgames.com/doc/api/ISteamUGC#SetItemPreview
+
+详情图 / Detail images
+依次上传 details/01-normal-mapping.jpg、02-lod-levels.jpg、03-floor-policy.jpg 作为工坊详情图。Mod 内副本位于 About/Details。RimWorld 原生 Mod 列表只会使用 About/Preview.png；额外详情图不会自动成为游戏内画廊。
+Upload the three numbered JPEG detail panels as Workshop gallery images. Copies are included under the mod's About/Details. They do not automatically add an in-game gallery.
+这些图是原理示意；实际验收截图另存于 review/floors。 / These are concept illustrations; actual runtime captures are kept separately under review/floors.

@@ -35,7 +35,7 @@ namespace RimZrism.Materials
             string hash = Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(typeof(Api).Assembly.Location)));
             if (Api.Version != 60 || hash != Compatibility.IsoRimSha256)
             {
-                Log.Error("[IRME] Unsupported IsoRim build: API=" + Api.Version + " SHA256=" + hash + ". Extension disabled.");
+                Log.Warning("[IRME] Unsupported IsoRim build: API=" + Api.Version + " SHA256=" + hash + ". Extension disabled.");
                 return;
             }
             InitializeEnabled();
@@ -85,12 +85,12 @@ namespace RimZrism.Materials
                     if (!grouped.TryGetValue(path, out var defs)) grouped.Add(path, defs = new List<MaterialDef>());
                     defs.Add(def);
                 }
-                catch (Exception e) { Log.Error("[IRME] Invalid material " + def.defName + ": " + e.Message); }
+                catch (Exception e) { Log.Warning("[IRME] Invalid material " + def.defName + ": " + e.Message); }
             }
             foreach (var pair in grouped)
             {
                 try { Load(pair.Key, pair.Value); }
-                catch (Exception e) { Log.Error("[IRME] Material rejected for " + pair.Key + "; original retained. " + e.Message); }
+                catch (Exception e) { Log.Warning("[IRME] Material rejected for " + pair.Key + "; original retained. " + e.Message); }
             }
         }
         private static Vector3 V3(BinaryReader r) => new Vector3(r.ReadSingle(), r.ReadSingle(), r.ReadSingle());
@@ -157,7 +157,7 @@ namespace RimZrism.Materials
                 material.name = "IRME_" + def.defName; material.mainTexture = original.mainTexture; material.color = original.color; material.renderQueue = original.renderQueue;
                 material.SetFloat("_LightMode", 1); material.SetTexture("_NormalTex", Normal(def));
                 material.SetVector("_NormalParams", new Vector4(def.normalStrength, def.flipGreen ? -1 : 1, def.flipNormalV ? 1 : 0, 0));
-                Api.ConfigureStaticMaterial(material);
+                Api.ConfigureStaticMaterial(material, supportsFloorFade: true);
                 variants.Add(original, material);
             }
             return material;

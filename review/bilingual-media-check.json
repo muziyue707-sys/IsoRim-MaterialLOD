@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-07",
+  "scope": "Bilingual About/Workshop copy and reference-based diagonal material/wireframe cover",
+  "xml_parse_and_metadata_invariants": "PASS",
+  "bbcode_balanced": "PASS",
+  "workshop_description_utf8_bytes": 4303,
+  "cover": {
+    "tool": "built-in image_gen",
+    "size": [
+      1754,
+      897
+    ],
+    "jpeg_bytes": 241922,
+    "png_sha256": "751bd5e5e9018ec21b83cbf8e478e6f0e34cb54d75ab1c19ac00e775489b1023",
+    "jpeg_sha256": "38507771e74852ad3508b05b3db36292c355ff53834df065bd585ad168ca86f3",
+    "reference": "workshop/cover-reference.png",
+    "prompt": "workshop/cover-prompt.txt",
+    "visual_review": "All three textured upper halves and grey lower halves show wireframes. Left has dense illustrated topology; middle and right have sparse illustrated triangulation. Header and diagonal split retained. Not actual topology evidence.",
+    "final_edit_prompt": "workshop/cover-prompt-upper-wireframe.txt"
+  },
+  "archive": {
+    "path": "packages\\IsoRim-MaterialLOD-0.3.0-bilingual.zip",
+    "sha256": "8b34e9236ac137a3e59ff227c24887ed6e37e134b6a0c447ce77984c636ed5d9",
+    "bytes": 2618896,
+    "crc": "PASS"
+  },
+  "baseline_archive_sha256": "ef9a2a399020c5ae2b5dcf844bdf54d69c174d60f4ea5b7f7762f5701addc918",
+  "runtime_binaries_unchanged": {
+    "IsoRimMaterialLOD/Assemblies/IRME.dll": "3712a3883ffaafc75ab098a03a6daa11bfef269b115fcaf54f4b1b5a0bf2a996"
+  },
+  "not_performed": [
+    "New runtime tests (metadata and cover changes only)",
+    "Steam Workshop publication",
+    "Remote GitHub update for this metadata/artwork change"
+  ]
+}

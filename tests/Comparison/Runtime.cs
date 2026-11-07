@@ -21,7 +21,16 @@ public sealed class IRMEComparison : GameComponent
     {
         if (!Environment.GetCommandLineArgs().Contains("-isorim-normal-comparison-test") || !Out.Replace('\\', '/').Contains("/compare-")) return;
         if (Current.ProgramState != ProgramState.Playing || Find.CurrentMap == null) return;
-        if (!loaded) { loaded = true; GameDataSaveLoader.LoadGame("Comparison"); return; }
+        bool fresh = Environment.GetCommandLineArgs().Contains("-irme-fresh-comparison");
+        if (!loaded)
+        {
+            loaded = true;
+            if (!fresh) { GameDataSaveLoader.LoadGame("Comparison"); return; }
+            // Fresh-map fallback smoke avoids requiring the DLC set of a historical save.
+            var def = DefDatabase<ThingDef>.GetNamed("IRME_NormalCrate");
+            GenSpawn.Spawn(ThingMaker.MakeThing(def), Find.CurrentMap.Center, Find.CurrentMap);
+            File.WriteAllText(Path.Combine(Out, "fresh-map.txt"), "Fresh isolated map; configured crate spawned with unsupported host.");
+        }
         if (++frames < 80) return;
         Find.WindowStack.Windows.ToList().ForEach(w => w.Close(false));
         if (!ready)

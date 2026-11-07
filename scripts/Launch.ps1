@@ -1,4 +1,4 @@
-param([string]$RunName='lod-run01', [ValidateSet('lod','material','comparison')][string]$Mode='lod', [switch]$Baseline, [string]$HostDll)
+param([string]$RunName='lod-run01', [ValidateSet('lod','material','comparison','floor')][string]$Mode='lod', [switch]$Baseline, [string]$HostDll, [switch]$FreshComparison)
 $ErrorActionPreference='Stop'
 $root=Join-Path $PSScriptRoot '..\validation'
 $repo=Join-Path $PSScriptRoot '..\..\IsoRim-public-api'
@@ -22,6 +22,10 @@ if(!(Test-Path -LiteralPath $runtime)){
  New-Item -ItemType Junction -Path (Join-Path $runtime 'Mods\Example') -Target (Join-Path $addon $(if($Baseline){'tests\BaselineExample'}else{'example'}))|Out-Null
 }
 if(!$HostDll){$HostDll=Join-Path $addon 'build\IsoRim.dll'}
+if($Mode -eq 'floor'){
+ $floorTarget=Join-Path $runtime 'Mods\IsoRimZ'
+ if(!(Test-Path $floorTarget)){Copy-Item -LiteralPath "$ws\3824503834" -Destination $floorTarget -Recurse}
+}
 Copy-Item -LiteralPath $HostDll -Destination (Join-Path $runtime 'Mods\IsoRim\1.7\Assemblies\IsoRim.dll')
 foreach($pair in @(@('Addon','mod'),@('Tests',$(if($Mode -eq 'comparison'){'tests\Comparison'}else{'tests'})))){$dest=Join-Path $runtime ('Mods\'+$pair[0]);if(!(Test-Path $dest)){New-Item -ItemType Junction -Path $dest -Target (Join-Path $addon $pair[1])|Out-Null}}
 New-Item -ItemType Directory -Path (Join-Path $run 'Config') -Force|Out-Null
@@ -32,13 +36,16 @@ Get-ChildItem -LiteralPath "$protected\Config","$protected\Saves" -File -Recurse
 Get-ChildItem -LiteralPath "$ws\3819577715","$ws\3824503834" -File -Recurse | Get-FileHash | Select-Object Path,Hash | ConvertTo-Json -Depth 3 | Set-Content -LiteralPath (Join-Path $run 'workshop-before.json')
 $configFile=Join-Path $run 'Config\ModsConfig.xml'
 $configText=[IO.File]::ReadAllText($configFile)
+if($Mode -eq 'floor'){$configText=$configText.Replace('<li>peren.isorim17</li>','<li>peren.isorim17</li><li>peren.isorimprojectz</li>')}
 if($Baseline){$configText=$configText.Replace('<li>shuib.rimzrism.materials</li>','')}
 if($Mode -eq 'comparison'){
  $configText=$configText.Replace('shuib.rimzrism.materials.tests','shuib.rimzrism.comparison')
  New-Item -ItemType Directory -Path (Join-Path $run 'Saves') -Force|Out-Null
- Copy-Item (Join-Path $root 'material-run01\Saves\IRME_Acceptance.rws') (Join-Path $run 'Saves\Comparison.rws')
+ if(!$FreshComparison){Copy-Item (Join-Path $root 'material-run01\Saves\IRME_Acceptance.rws') (Join-Path $run 'Saves\Comparison.rws')}
 }
 [IO.File]::WriteAllText($configFile,$configText)
 Get-FileHash $HostDll,(Join-Path $addon 'mod\Assemblies\IRME.dll'),(Join-Path $addon 'tests\Assemblies\IRME.Tests.dll')|Select-Object Path,Hash|ConvertTo-Json|Set-Content (Join-Path $run 'binaries.json')
-$process=Start-Process -FilePath (Join-Path $runtime 'RimWorld.exe') -WorkingDirectory $runtime -ArgumentList "-NoWindow -quicktest -isorim3d -isorim-normal-$Mode-test -savedatafolder=$run -NoFileLog -screen-fullscreen 0 -screen-width 1600 -screen-height 1000" -RedirectStandardOutput (Join-Path $run 'Player.log') -RedirectStandardError (Join-Path $run 'stderr.log') -WindowStyle Hidden -PassThru
+$extra=if($Mode -eq 'floor'){'-projectzfloors=3'}else{''}
+if($FreshComparison){$extra+=' -irme-fresh-comparison'}
+$process=Start-Process -FilePath (Join-Path $runtime 'RimWorld.exe') -WorkingDirectory $runtime -ArgumentList "-NoWindow -quicktest -isorim3d -isorim-normal-$Mode-test $extra -savedatafolder=$run -NoFileLog -screen-fullscreen 0 -screen-width 1600 -screen-height 1000" -RedirectStandardOutput (Join-Path $run 'Player.log') -RedirectStandardError (Join-Path $run 'stderr.log') -WindowStyle Hidden -PassThru
 @{pid=$process.Id;run=$run}|ConvertTo-Json | Tee-Object -FilePath (Join-Path $run 'process.json')

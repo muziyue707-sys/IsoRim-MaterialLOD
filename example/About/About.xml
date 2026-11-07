@@ -1,1 +1,26 @@
-<ModMetaData><name>IRME Example Crates</name><author>Shuib / Codex</author><packageId>shuib.rimzrism.materials.example</packageId><supportedVersions><li>1.7</li></supportedVersions><modVersion>0.3.0</modVersion><description>Opt-in static-building normal maps and 2/3-level LOD for the tested IsoRim Waylith build. See README.</description><modDependencies><li><packageId>shuib.rimzrism.materials</packageId><displayName>IsoRim Material and LOD</displayName><downloadUrl>https://github.com/muziyue707-sys/IsoRim-MaterialLOD</downloadUrl></li></modDependencies><loadAfter><li>shuib.rimzrism.materials</li></loadAfter></ModMetaData>
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>IRME Example Crates | 材质与 LOD 示例箱体</name>
+  <author>Shuib / Codex</author>
+  <packageId>shuib.rimzrism.materials.example</packageId>
+  <supportedVersions><li>1.7</li></supportedVersions>
+  <modVersion>0.3.0</modVersion>
+  <description><![CDATA[【中文】可选示例包 · 测试版 0.3.0
+演示 IsoRim Material and LOD 的静态建筑法线材质及两／三档 LOD 配置。箱体样件使用 44／28／12 三角面的网格。需要配套的 IsoRim API 测试分支与主扩展 Mod；放在主扩展之后加载。
+这是示例资源包，不会让所有建筑自动获得法线贴图或 LOD。安装和验证范围请参阅仓库 README、MATERIALS.md、LOD.md 与 VALIDATION.md。
+
+【English】Optional example pack · Test build 0.3.0
+Demonstrates normal-mapped static buildings and two-/three-level LOD configuration for IsoRim Material and LOD. The crate sample uses meshes with 44/28/12 triangles. Requires the matching IsoRim API test branch and the main addon; load this pack after the addon.
+This example does not automatically add normal maps or LOD to all buildings. See README, MATERIALS.md, LOD.md, and VALIDATION.md in the repository for installation and validation scope.
+
+https://github.com/muziyue707-sys/IsoRim-MaterialLOD
+]]></description>
+  <modDependencies>
+    <li>
+      <packageId>shuib.rimzrism.materials</packageId>
+      <displayName>IsoRim Material and LOD</displayName>
+      <downloadUrl>https://github.com/muziyue707-sys/IsoRim-MaterialLOD</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter><li>shuib.rimzrism.materials</li></loadAfter>
+</ModMetaData>

@@ -1,0 +1,83 @@
+PASS: API-only addon initialized
+PASS: public load and gameplay model share one cache identity
+PASS: addon has no Harmony reference
+PASS: geometry snapshot cannot mutate host model
+PASS: API rejects wrong corner array lengths
+PASS: API rejects nonfinite tangent data
+PASS: initial screen-size selection covers all three levels
+PASS: 15 percent hysteresis retains both sides inside dead band
+PASS: both threshold crossings work in both directions
+PASS: invalid projected size falls back to full detail
+PASS: two-level configuration supports downgrade and upgrade
+PASS: invalid threshold rejected by definition validation
+READY chains=1
+PASS: actual GPU mesh arrays have normals and tangents for every corner
+PASS: actual GPU mesh arrays have normals and tangents for every corner
+basis diagnostic requests=4 state=0
+PASS: custom surface is present in regular section mesh
+PASS: 01_near_LOD0 applied=0 rendered=0 size=0.1879 tris=44
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+CAPTURE 01_near_LOD0 switches=0 dirty=0
+PASS: actual GPU mesh arrays have normals and tangents for every corner
+PASS: actual GPU mesh arrays have normals and tangents for every corner
+basis diagnostic requests=6 state=1
+PASS: custom surface is present in regular section mesh
+PASS: 02_medium_LOD1 applied=1 rendered=1 size=0.1012 tris=28
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+CAPTURE 02_medium_LOD1 switches=1 dirty=1
+PASS: 03_far_LOD2 applied=2 rendered=2 size=0.0329 tris=12
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+CAPTURE 03_far_LOD2 switches=2 dirty=2
+PASS: throwing selector disabled after one call
+PASS: throwing surface disabled after one call
+PASS: 04_return_LOD1 applied=1 rendered=1 size=0.1012 tris=28
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+CAPTURE 04_return_LOD1 switches=3 dirty=3
+PASS: 05_return_LOD0 applied=0 rendered=0 size=0.1879 tris=44
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+CAPTURE 05_return_LOD0 switches=4 dirty=4
+PASS: 06_hysteresis_hold applied=0 rendered=0 size=0.1217 tris=44
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+PASS: live camera actually crosses nominal threshold: 0.1173852..0.1227996
+PASS: camera boundary jitter produces zero LOD switches
+CAPTURE 06_hysteresis_hold switches=4 dirty=4
+PASS: 07_far_save applied=2 rendered=2 size=0.0329 tris=12
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+CAPTURE 07_far_save switches=5 dirty=5
+PASS: save/load retains normal building data
+READY chains=1
+PASS: 08_reload_LOD2 applied=2 rendered=2 size=0.0329 tris=12
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+CAPTURE 08_reload_LOD2 switches=0 dirty=0
+PASS: actual GPU mesh arrays have normals and tangents for every corner
+PASS: actual GPU mesh arrays have normals and tangents for every corner
+basis diagnostic requests=16 state=0
+PASS: custom surface is present in regular section mesh
+PASS: 09_near_reload applied=0 rendered=0 size=0.1879 tris=44
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+CAPTURE 09_near_reload switches=1 dirty=1
+PASS: 10_medium_night applied=1 rendered=1 size=0.1012 tris=28
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+CAPTURE 10_medium_night switches=2 dirty=2
+PASS: 11_medium_roof applied=1 rendered=1 size=0.1012 tris=28
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+CAPTURE 11_medium_roof switches=2 dirty=2
+PASS: 12_medium_restored applied=1 rendered=1 size=0.1012 tris=28
+PASS: unconfigured control stays outside LOD tracker
+PASS: LOD building remains selectable
+CAPTURE 12_medium_restored switches=2 dirty=2
+PASS: despawned building removed from LOD tracker
+CAPTURE 13_destroyed switches=2 dirty=2
+PASS: at most two sections dirtied by LOD per frame
+COMPLETE switches=2 dirty=2 checks=171

@@ -1,1 +1,1 @@
-namespace RimZrism.Materials { internal static class Compatibility { internal const string IsoRimSha256="9CC4D7678413BAAEB9DE707F82F1A9F47E959C49C3962426B5E107571E0AA959"; } }
+namespace RimZrism.Materials { internal static class Compatibility { internal const string IsoRimSha256="91F3EE4309C28E1112CC062C7E8B65749D65FB660034802FD5E7731AC8F64083"; } }

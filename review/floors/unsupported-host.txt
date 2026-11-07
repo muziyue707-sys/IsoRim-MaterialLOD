@@ -1,0 +1,4 @@
+PASS: fresh isolated map and configured crate; all three camera phases completed.
+PASS: exactly one unsupported-host warning; no MissingMethodException, TypeLoadException or IRME error.
+18:19:09  WARN [IRME] Unsupported IsoRim build: API=60 SHA256=AC0685811FBE5DE0F22D0B3C22B8E5F223E0175D098B3C8509837F403376AB5E. Extension disabled.
+Native crate rendering visually inspected. No performance conclusion.
