@@ -1,5 +1,7 @@
 # IsoRim Material and LOD 0.3.0
 
+作者 / Author：**水表狂魔**（GitHub: muziyue707-sys）。
+
 中文／English 发布素材：主 Mod 与示例包的 About 已提供双语说明；[workshop/](workshop/) 包含双语工坊标题、BBCode 正文和封面。这些是本地发布素材，不代表已发布 Steam 工坊条目。The About files and Workshop copy are bilingual; publishing assets do not imply a live Steam listing.
 
 Independent RimWorld 1.7 addon for static building normal maps and two/three-level LOD. All material defs, IMB1 sidecar parsing, PNG loading, shaders, caches, thresholds, hysteresis and scheduling live here. Uses documented IsoRim API only: no Harmony reference, patches or private reflection.

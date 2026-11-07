@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>IsoRim Material and LOD | 材质与细节分级</name>
-  <author>Shuib</author>
+  <author>水表狂魔</author>
   <packageId>shuib.rimzrism.materials</packageId>
   <supportedVersions><li>1.7</li></supportedVersions>
   <modVersion>0.3.0</modVersion>

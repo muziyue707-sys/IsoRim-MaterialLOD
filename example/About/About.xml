@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>IRME Example Crates | 材质与 LOD 示例箱体</name>
-  <author>Shuib / Codex</author>
+  <author>水表狂魔</author>
   <packageId>shuib.rimzrism.materials.example</packageId>
   <supportedVersions><li>1.7</li></supportedVersions>
   <modVersion>0.3.0</modVersion>

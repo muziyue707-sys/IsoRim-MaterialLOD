@@ -68,8 +68,8 @@
   "performance_claim": false,
   "steam_published": false,
   "package": "IsoRim-MaterialLOD-0.3.0-floors.zip",
-  "package_sha256": "862565642470c1e9976d6f72285167d816f48d3d9928a782994b180c386d42c7",
-  "package_bytes": 3940016,
+  "package_sha256": "246a1890ac30bb2b55fa38ee142366a102ae8d6b6893dc6e07a4f3c879f5810d",
+  "package_bytes": 3940133,
   "zip_crc": "PASS",
   "redistributed_game_assemblies": false
 }
