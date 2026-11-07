@@ -1,0 +1,9 @@
+{
+  "host_base": "4cc784a669ef049ba081296ff94f50bf9cc4dd9d",
+  "host_sha256": "9cc4d7678413baaeb9de707f82f1a9f47e959c49c3962426b5e107571e0aa959",
+  "addon_sha256": "3712a3883ffaafc75ab098a03a6daa11bfef269b115fcaf54f4b1b5a0bf2a996",
+  "package_sha256": "ef9a2a399020c5ae2b5dcf844bdf54d69c174d60f4ea5b7f7762f5701addc918",
+  "package_bytes": 335916,
+  "zip_crc": "PASS",
+  "redistributed_game_assemblies": false
+}

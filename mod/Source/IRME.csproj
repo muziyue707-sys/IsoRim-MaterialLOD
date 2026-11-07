@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup><TargetFramework>net10.0</TargetFramework><ImplicitUsings>disable</ImplicitUsings><Nullable>disable</Nullable><AssemblyName>IRME</AssemblyName><GenerateAssemblyInfo>false</GenerateAssemblyInfo><AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath><GenerateDependencyFile>false</GenerateDependencyFile><OutputPath>../Assemblies/</OutputPath></PropertyGroup>
+<ItemGroup>
+<Reference Include="Assembly-CSharp"><HintPath>$(RimWorldDir)/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+<Reference Include="UnityStubs"><HintPath>$(RimWorldDir)/UnityStubs.dll</HintPath><Private>false</Private></Reference>
+<Reference Include="IsoRim"><HintPath>$(IsoRimDll)</HintPath><Private>false</Private></Reference>
+</ItemGroup>
+</Project>

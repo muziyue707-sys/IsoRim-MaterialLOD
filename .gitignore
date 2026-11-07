@@ -1,0 +1,10 @@
+build/
+validation/
+dist/
+mod/Assemblies/
+tests/Assemblies/
+**/bin/
+**/obj/
+*.user
+build-baseline/
+**/Assemblies/

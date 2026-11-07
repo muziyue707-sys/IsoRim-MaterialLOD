@@ -1,0 +1,1 @@
+<ModMetaData><name>IRME isolated acceptance tests</name><author>Shuib</author><packageId>shuib.rimzrism.materials.tests</packageId><supportedVersions><li>1.7</li></supportedVersions><loadAfter><li>shuib.rimzrism.materials</li><li>shuib.rimzrism.materials.example</li></loadAfter></ModMetaData>

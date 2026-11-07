@@ -1,0 +1,20 @@
+<Defs>
+  <RimZrism.Materials.LodDef>
+    <defName>IRME_CrateLod</defName>
+    <model>Models/Crate_Normal.obj</model>
+    <hysteresis>0.15</hysteresis>
+    <levels>
+      <li><model>Models/Crate_LOD1.obj</model><belowScreenHeight>0.12</belowScreenHeight></li>
+      <li><model>Models/Crate_LOD2.obj</model><belowScreenHeight>0.045</belowScreenHeight></li>
+    </levels>
+  </RimZrism.Materials.LodDef>
+  <RimZrism.Materials.MaterialDef>
+    <defName>IRME_CrateLod1Material</defName>
+    <model>Models/Crate_LOD1.obj</model>
+    <materialName>Crate</materialName>
+    <normalTexture>IRME/Crate_LOD1_Normal</normalTexture>
+    <normalStrength>1</normalStrength>
+    <flipNormalV>true</flipNormalV>
+  </RimZrism.Materials.MaterialDef>
+  <!-- LOD2 intentionally uses native base-color material; no normal sample or tangent upload. -->
+</Defs>

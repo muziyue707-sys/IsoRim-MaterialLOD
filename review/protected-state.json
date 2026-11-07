@@ -1,0 +1,38 @@
+[
+  {
+    "run": "lod-run04-final",
+    "workshop_files": 3040,
+    "unchanged": true,
+    "protected_files": 648
+  },
+  {
+    "run": "material-run03-final",
+    "workshop_files": 3040,
+    "unchanged": true,
+    "protected_files": 648
+  },
+  {
+    "run": "compare-unsupported-fixed",
+    "workshop_files": 3040,
+    "unchanged": true,
+    "protected_files": 648
+  },
+  {
+    "run": "compare-original-final",
+    "protected_files": 648,
+    "workshop_files": 3040,
+    "unchanged": true
+  },
+  {
+    "run": "compare-unused-final",
+    "protected_files": 648,
+    "workshop_files": 3040,
+    "unchanged": true
+  },
+  {
+    "run": "compare-addon-final",
+    "protected_files": 648,
+    "workshop_files": 3040,
+    "unchanged": true
+  }
+]

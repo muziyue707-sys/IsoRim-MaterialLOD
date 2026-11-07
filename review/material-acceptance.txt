@@ -1,0 +1,30 @@
+PASS: API 60 + pending extension candidate loaded
+PASS: API-only addon enabled and has no Harmony assembly reference
+PASS: native model loader and writer have no Harmony patches
+PASS: normal sample is a regular spawned Building
+PASS: normal building has construction blueprint and frame definitions
+PASS: unmapped/native material requests retain original shader
+PASS: building can be selected
+READY loadedModels=3 baked=2 uploaded=2
+CAPTURE 01_day_close hour=9 sun=(0.431688, 0.7692242, -0.4711047)
+CAPTURE 02_rotated hour=9 sun=(0.431688, 0.7692242, -0.4711047)
+CAPTURE 03_evening hour=17 sun=(-0.2643135, 0.8301708, -0.4908715)
+CAPTURE 04_indoor_night hour=0.0004 sun=(-0.0002611717, 0.8829476, -0.4694715)
+CAPTURE 05_fogged hour=0.0004 sun=(-0.0002611717, 0.8829476, -0.4694715)
+CAPTURE 06_restored hour=8.9996 sun=(0.4317613, 0.7691912, -0.4710914)
+PASS: extension loaded basis and uploaded regular section meshes
+PASS: isolated save created
+PASS: save/load preserves normal building HP and rotation
+PASS: API 60 + pending extension candidate loaded
+PASS: API-only addon enabled and has no Harmony assembly reference
+PASS: native model loader and writer have no Harmony patches
+PASS: normal sample is a regular spawned Building
+PASS: normal building has construction blueprint and frame definitions
+PASS: unmapped/native material requests retain original shader
+PASS: building can be selected
+READY loadedModels=3 baked=22 uploaded=22
+CAPTURE 07_reloaded hour=9.0112 sun=(0.4296324, 0.7701469, -0.4714761)
+CAPTURE 08_play_zoom hour=9.0112 sun=(0.4296324, 0.7701469, -0.4714761)
+CAPTURE 09_roof_occlusion hour=9.0112 sun=(0.4296324, 0.7701469, -0.4714761)
+CAPTURE 10_roof_hidden hour=9.0112 sun=(0.4296324, 0.7701469, -0.4714761)
+COMPLETE

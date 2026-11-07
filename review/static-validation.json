@@ -1,0 +1,30 @@
+{
+  "assets": [
+    {
+      "asset": "Crate_Flat.obj",
+      "corners": 132,
+      "sha256": "001c8e30c66d4d2bdf16550bb3d3939d606b519b060f33c142759118e23ca4cd",
+      "git_bytes_preserved": true
+    },
+    {
+      "asset": "Crate_LOD1.obj",
+      "corners": 84,
+      "sha256": "1ef61b83313fe04fdcf520d08f37c10cbfe3e2b436730d782fe634e2ca60a4ca",
+      "git_bytes_preserved": true
+    },
+    {
+      "asset": "Crate_LOD2.obj",
+      "corners": 36,
+      "sha256": "476510402ea14fc6276c29ac51fd97f93c2da95829d058c423ba895c0ee36095",
+      "git_bytes_preserved": true
+    },
+    {
+      "asset": "Crate_Normal.obj",
+      "corners": 132,
+      "sha256": "001c8e30c66d4d2bdf16550bb3d3939d606b519b060f33c142759118e23ca4cd",
+      "git_bytes_preserved": true
+    }
+  ],
+  "ubo_match": true,
+  "addon_internal_access_scan": "PASS"
+}
