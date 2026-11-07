@@ -1,7 +1,7 @@
-param([string]$RunName='lod-run01', [ValidateSet('lod','material','comparison','floor')][string]$Mode='lod', [switch]$Baseline, [string]$HostDll, [switch]$FreshComparison)
+param([string]$RunName='lod-run01', [ValidateSet('lod','material','comparison','floor')][string]$Mode='lod', [switch]$Baseline, [string]$HostDll, [switch]$FreshComparison, [string]$IsoRimSource=(Join-Path $PSScriptRoot '..\..\IsoRim-api61-release'))
 $ErrorActionPreference='Stop'
 $root=Join-Path $PSScriptRoot '..\validation'
-$repo=Join-Path $PSScriptRoot '..\..\IsoRim-public-api'
+$repo=$IsoRimSource
 $addon=Join-Path $PSScriptRoot '..'
 $game='E:\SteamLibrary\steamapps\common\RimWorld'
 $ws='E:\SteamLibrary\steamapps\workshop\content\294100'

@@ -1,4 +1,4 @@
-param([string]$GameDir='E:\SteamLibrary\steamapps\common\RimWorld', [string]$IsoRimSource=(Join-Path $PSScriptRoot '..\..\IsoRim-public-api'), [string]$HarmonyDll='E:\SteamLibrary\steamapps\workshop\content\294100\2009463077\1.7\Assemblies\0Harmony.dll', [string]$IsoRimZDll='E:\SteamLibrary\steamapps\workshop\content\294100\3824503834\1.7\Assemblies\IsoRimProjectZ.dll', [switch]$HostOnly, [string]$HostOutput=(Join-Path $PSScriptRoot '..\build'))
+param([string]$GameDir='E:\SteamLibrary\steamapps\common\RimWorld', [string]$IsoRimSource=(Join-Path $PSScriptRoot '..\..\IsoRim-api61-release'), [string]$HarmonyDll='E:\SteamLibrary\steamapps\workshop\content\294100\2009463077\1.7\Assemblies\0Harmony.dll', [string]$IsoRimZDll='E:\SteamLibrary\steamapps\workshop\content\294100\3824503834\1.7\Assemblies\IsoRimProjectZ.dll', [switch]$HostOnly, [string]$HostOutput=(Join-Path $PSScriptRoot '..\build'), [string]$PrebuiltHostDll)
 $ErrorActionPreference='Stop'
 $repo=$IsoRimSource
 $game=$GameDir
@@ -9,11 +9,19 @@ $refs+=$HarmonyDll
 $metadata=[Collections.Generic.List[Microsoft.CodeAnalysis.MetadataReference]]::new()
 foreach($path in $refs){try{$null=[Reflection.AssemblyName]::GetAssemblyName($path);$metadata.Add([Microsoft.CodeAnalysis.MetadataReference]::CreateFromFile($path))}catch [BadImageFormatException]{}}
 $parse=[Microsoft.CodeAnalysis.CSharp.CSharpParseOptions]::Default.WithPreprocessorSymbols([string[]]@('RW16','RW17'))
+$options=[Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions]::new([Microsoft.CodeAnalysis.OutputKind]::DynamicallyLinkedLibrary).WithOptimizationLevel([Microsoft.CodeAnalysis.OptimizationLevel]::Release).WithAllowUnsafe($true).WithDeterministic($true)
+$folder=$HostOutput
+New-Item -ItemType Directory -Path $folder -Force | Out-Null
+$output=Join-Path $folder 'IsoRim.dll'
+if($PrebuiltHostDll){
+ Copy-Item -LiteralPath $PrebuiltHostDll -Destination $output -Force
+ Write-Output 'HOST: using exact supplied binary (no host source changes)'
+}else{
 $trees=[Collections.Generic.List[Microsoft.CodeAnalysis.SyntaxTree]]::new()
 $sources=@(Get-ChildItem (Join-Path $repo 'Source') -Filter '*.cs' -Recurse | Where-Object FullName -NotMatch '\\(bin|obj)\\' | Select-Object -ExpandProperty FullName)
 
 foreach($path in $sources){$source=[Microsoft.CodeAnalysis.Text.SourceText]::From([IO.File]::ReadAllText($path),[Text.Encoding]::UTF8);$trees.Add([Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText($source,$parse,$path))}
-$options=[Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions]::new([Microsoft.CodeAnalysis.OutputKind]::DynamicallyLinkedLibrary).WithOptimizationLevel([Microsoft.CodeAnalysis.OptimizationLevel]::Release).WithAllowUnsafe($true).WithDeterministic($true)
+
 $compilation=[Microsoft.CodeAnalysis.CSharp.CSharpCompilation]::Create('IsoRim',$trees,$metadata,$options)
 $diagnostics=$compilation.GetDiagnostics()
 $errors=@($diagnostics | Where-Object Severity -eq Error)
@@ -27,6 +35,7 @@ try{$result=$compilation.Emit($stream)}finally{$stream.Dispose()}
 if(!$result.Success){throw ($result.Diagnostics -join "`n")}
 "BUILD PASS sources=$($sources.Count)  output=$output"
 Get-FileHash -LiteralPath $output
+}
 
 if($HostOnly){return}
 $hash=(Get-FileHash -LiteralPath $output).Hash

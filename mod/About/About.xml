@@ -4,39 +4,39 @@
   <author>水表狂魔</author>
   <packageId>shuib.rimzrism.materials</packageId>
   <supportedVersions><li>1.7</li></supportedVersions>
-  <modVersion>0.3.0</modVersion>
-  <description><![CDATA[【中文】测试版 0.3.0 · 楼层候选版 · RimWorld 1.7
+  <modVersion>0.3.1</modVersion>
+  <description><![CDATA[【中文】版本 0.3.1 · API 61 · RimWorld 1.7
 
 为 IsoRim 的普通静态建筑模型添加法线贴图与两／三档 LOD。近景使用烘焙法线表现凹槽、接缝等表面细节；远景按屏幕占比切换预先制作的简化模型，并用滞回减少临界位置的反复切换。
 
 本 Mod 是扩展框架，需要模型包明确配置材质和各档网格。不会自动替换全部建筑、生成法线贴图或自动减面。通过 IsoRim 公开 API 接入；本附加 Mod 不使用 Harmony 补丁或内部反射。
 
-【安装前必读】当前需要配套的 IsoRim API 测试分支，普通工坊版尚缺少所需接口，仅订阅本 Mod 不能启用。请按 GitHub 仓库说明配套构建和安装。版本／散列不匹配时，扩展会停用，保留 IsoRim 原有渲染。
+【安装】安装说明：已核对更新后的工坊 IsoRim API 61，DLL 与通过运行验证的版本一致。直接订阅并更新 IsoRim Waylith 和本 Mod 即可，无需手动安装 GitHub 版。等待 Steam 下载完成后重启游戏；此前安装过本地 IsoRim 的玩家，请停用本地副本，避免重复启用。 详见 API61-INSTALL.md。版本／散列不匹配时保留原生画法。
 着色器由本子 Mod 维护；IsoRim 内部着色器约定不保证稳定，更新后可能需要适配。版本或资产失效时保留原生画法，最多记录警告。
 加载顺序：Harmony → 配套 IsoRim → 本 Mod → 兼容模型包。
 
 支持 IsoRimZ 地面层与上层的普通静态建筑：当前层按屏幕大小分级，可见下层默认用最远档（可关闭），隐藏层暂停 LOD，窥视层继续更新。车辆、活动炮塔、门叶及角色尚未验收；不包含完整 PBR、自动减面或纹理卸载，不承诺 FPS 提升。仓库另附可选的箱体示例包。
 
-【English】Test build 0.3.0 · Floor-support candidate · RimWorld 1.7
+【English】Version 0.3.1 · API 61 · RimWorld 1.7
 
 Adds baked normal maps and two- or three-level LOD to ordinary static building models in IsoRim. Normal maps add surface detail at close range; prepared lower-detail meshes are selected by screen size, with hysteresis to reduce switching near thresholds.
 
 This is an extension framework. Model packs must explicitly supply and configure materials and LOD meshes. It does not replace every building, generate normal maps, or simplify meshes automatically. The addon uses public IsoRim APIs, with no addon Harmony patches or private reflection.
 
-READ BEFORE INSTALLING: This build requires the companion IsoRim API test branch. The standard Workshop build currently lacks the required APIs; subscribing to this addon alone is insufficient. Follow the repository's matching build and installation instructions. If version/hash checks fail, the extension disables itself and leaves native IsoRim rendering in place.
+INSTALLATION: Updated Workshop IsoRim API 61 has been verified against the runtime-tested DLL. Subscribe to and update IsoRim Waylith and this addon; manual GitHub installation is no longer required. Wait for Steam downloads to finish and restart the game. If you previously installed local IsoRim, disable that duplicate. See API61-INSTALL.md. Host version/hash mismatches retain native rendering.
 This addon owns its shader. Internal IsoRim shader conventions are not guaranteed stable; updates may require adaptation. Invalid assets or host mismatch fall back to native rendering with warnings.
 Load order: Harmony → matching IsoRim → this addon → compatible model packs.
 
 Supports ordinary static buildings on IsoRimZ ground and upper floors: screen-size LOD on the viewed floor, optional lowest LOD on visible lower floors, suspended LOD on hidden floors, and continued updates while peeking. Vehicles, moving turrets, doors, and characters are not validated. This is not a full PBR implementation and includes no automatic mesh reduction or texture eviction. No FPS improvement is promised. An optional crate example pack is included in the repository.
 
 Source / 源码：https://github.com/muziyue707-sys/IsoRim-MaterialLOD
-Required API PR / 所需接口：https://github.com/peren717/IsoRim-1.7/pull/6
+Merged API PR / 已合入接口：https://github.com/peren717/IsoRim-1.7/pull/6
 ]]></description>
   <modDependencies>
     <li>
       <packageId>Peren.IsoRim17</packageId>
       <displayName>IsoRim Waylith</displayName>
-      <downloadUrl>https://github.com/peren717/IsoRim-1.7</downloadUrl>
+      <downloadUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3819577715</downloadUrl>
     </li>
   </modDependencies>
   <loadAfter><li>Peren.IsoRim17</li></loadAfter>

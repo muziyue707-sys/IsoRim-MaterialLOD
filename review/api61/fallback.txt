@@ -1,0 +1,3 @@
+PASS: three fresh-map camera phases completed; native fallback.
+06:23:01  WARN [IRME] Unsupported IsoRim build: API=60 SHA256=CCE1341B979EA0F0B0360CFC2BF37F3EB00332B5BB6841366D8C2A71DE89D3AF. Extension disabled.
+No missing method/type exception or IRME error.

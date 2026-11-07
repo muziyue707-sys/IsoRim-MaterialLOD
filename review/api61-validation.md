@@ -1,0 +1,15 @@
+# API 61 / 0.3.1 acceptance
+
+Date: 2026-11-08. This release targets the author's published binary at upstream commit `75e80b98e19cb2b754d40cf6bb908dfd2a28277d`, not the earlier PR build. Host SHA256: `3A22565D697E78A5D15210C7B861F0FEBFD80C62C8D9D409D6529E2F990B1861`. The author squashed PR #6 into master, moved public declarations to Api61.cs / Api.md part 42, made the floor query read-only, and corrected culling registration and model reload keys. Shader sources are unchanged from the previous tested candidate.
+
+The addon now requires API >=61 plus the exact validated host hash. It was compiled directly against the author's DLL with `Build.ps1 -PrebuiltHostDll`; no host code or Workshop files were patched. Existing row polling handles the not-yet-rendered map returning invisible. Production rendering still has no Harmony patch, private reflection or direct ProjectZ dependency.
+
+Final run identifiers and binary/protection results are in [api61-provenance.json](api61-provenance.json). The floor fixture is `floor-run-api61-01`: 21 phases, 258 upper-floor buildings, hidden projection delta zero, current/lower LOD selection, peek/fade texture retention, actual perspective and native-offset agreement, rotation, lighting, fog/roof/slab coverage, save/reload and hidden despawn. Final upper/lower and peek screenshots were visually reviewed. The no-floor regression and old installed Workshop-host fallback are separately recorded; no whole-game FPS, full-stack or long-save claim is made.
+
+Private formal saves/configs and Workshop originals are hashed before/after isolated runs. Those private paths and saves are not included in the published evidence. Ambient missing Workshop entries can produce unrelated base-game errors; the extension's mismatch path is checked separately for a single warning and absence of missing method/type errors.
+
+An initial smoke named `floor-api61-01` did not enter the harness because its name did not satisfy the `/floor-run` isolation guard. It was stopped without changing protected files, and is not acceptance evidence. The properly named final run above executes all phases.
+
+Historical initial publication scope (superseded by the public release): an **unlisted** Workshop test item, author **水表狂魔**, bilingual description/cover and three detail images. As checked at preparation time, Workshop IsoRim still ships API 60 (remote update timestamp `1794001812`); the page explicitly requires the author's pinned GitHub API 61 installation. The original API 60 Workshop DLL is expected to disable the addon quietly. See [API61-INSTALL.md](../API61-INSTALL.md). Steam publication success is established by the submit callback and subsequent remote item verification, not by this document alone.
+
+Current publication: publicly available version 0.3.1, with Test Build labels removed. Workshop IsoRim now matches the validated API61 DLL and runtime resources. See [host comparison](workshop-host-api61-comparison.json) and [public release verification](workshop-public-release-20261108.json). The original runtime acceptance and its scope remain unchanged.

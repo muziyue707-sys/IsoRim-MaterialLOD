@@ -27,6 +27,8 @@ Hidden layers keep their cached mesh level. First hidden prints can use the lowe
 
 保存模型的原始地图行坐标，通过 `ReadStaticModelView` 获取当前真实高度与行偏移，再调用 `WorldToViewport`。不缓存可能过期的楼层绘制偏移，也不把压缩高度混入真实坐标。`LocalToWorld` 可直接返回含楼层偏移的位置；持续跟踪使用 `LocalToMap` 加当前偏移。
 
+API 61 的视图查询只读取渲染器已准备好的状态，不会主动准备楼层；首次绘制前可能返回不可见。子 Mod 保留对象并在后续帧再次查询，出现可见状态后按预算恢复。The API 61 view query is read-only and may be invisible before the map's first rendered frame; the addon keeps polling and resumes within its normal budget.
+
 法线材质通过 `ConfigureStaticMaterial(..., supportsFloorFade: true)` 明确声明实现 `_IsoFade` / `_IsoFadeFrom`。IsoRim 创建其原生淡出副本，保留共享法线贴图。顶点属性、光照参数和裁切标记属于 IsoRim 内部着色器约定，**不保证稳定**；更新后由本子 Mod 适配和复验。版本不匹配、资产或基底数据拒绝时回退原生画法，最多普通日志／警告。
 
 Raw geometry and live true-space floor offsets are kept separate. Custom materials explicitly opt into native floor fade. The consumer owns its shader; internal renderer shader conventions are not a stable public ABI. Invalid assets or a mismatched host retain native rendering with warnings, never intentional red error logs from the addon.

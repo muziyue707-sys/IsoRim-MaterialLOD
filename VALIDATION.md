@@ -1,3 +1,7 @@
+# Current 0.3.1 / API 61 revision
+
+See [API 61 acceptance](review/api61-validation.md) and [installation](API61-INSTALL.md). The following API 60 candidate records are historical.
+
 # Current floor-support revision
 
 See [the floor validation report](review/floor-validation.md) and [current hashes](review/floor-provenance.json) for the IsoRimZ candidate. The following original-candidate report and its hashes are retained as historical evidence; its floor exclusion does not describe the new revision.

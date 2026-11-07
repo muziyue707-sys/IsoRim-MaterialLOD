@@ -33,7 +33,7 @@ namespace RimZrism.Materials
         {
             // The reviewed shader contract and this candidate's API must both match. Never silently force-enable an update.
             string hash = Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(typeof(Api).Assembly.Location)));
-            if (Api.Version != 60 || hash != Compatibility.IsoRimSha256)
+            if (Api.Version < 61 || hash != Compatibility.IsoRimSha256)
             {
                 Log.Warning("[IRME] Unsupported IsoRim build: API=" + Api.Version + " SHA256=" + hash + ". Extension disabled.");
                 return;
@@ -47,7 +47,7 @@ namespace RimZrism.Materials
             Materials.Initialize();
             ModelLods.Initialize();
             Enabled = true;
-            Log.Message("[IRME] 0.3.0 API-only addon initialized; surfaces=" + Materials.LoadedModels + " LOD chains=" + ModelLods.ChainsLoaded);
+            Log.Message("[IRME] 0.3.1 API-only addon initialized; surfaces=" + Materials.LoadedModels + " LOD chains=" + ModelLods.ChainsLoaded);
         }
     }
 

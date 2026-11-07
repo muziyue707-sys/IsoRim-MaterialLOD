@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-08",
+  "addon_version": "0.3.1",
+  "author": "水表狂魔",
+  "create": {
+    "m_eResult": 1,
+    "m_nPublishedFileId": {
+      "m_PublishedFileId": 3835669507
+    },
+    "m_bUserNeedsToAcceptWorkshopLegalAgreement": false
+  },
+  "submit": {
+    "m_eResult": 1,
+    "m_bUserNeedsToAcceptWorkshopLegalAgreement": false,
+    "m_nPublishedFileId": {
+      "m_PublishedFileId": 3835669507
+    }
+  },
+  "remote": {
+    "id": 3835669507,
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3835669507",
+    "result": "k_EResultOK",
+    "title": "IsoRim Material & LOD | 材质与细节分级 [测试版 / Test Build]",
+    "visibility": "k_ERemoteStoragePublishedFileVisibilityUnlisted",
+    "previewCount": 3,
+    "dependencies": [
+      3819577715
+    ],
+    "bytes": 2871949,
+    "ownerMatches": true,
+    "descriptionMatches": true,
+    "banned": false
+  },
+  "package_sha256": "7505479aebc96557ca9818e861b69f445541bdf336fa66df83da94d6f43d0a58",
+  "package_bytes": 3934897,
+  "web_crawler": "Could not open unlisted page; publication verified through authenticated SteamUGC query.",
+  "github_addon_sync": "Not performed in this Workshop publishing task; 0.3.1 source is included in the Workshop content and local package."
+}

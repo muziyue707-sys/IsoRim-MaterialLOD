@@ -1,3 +1,13 @@
+当前状态 / Current status: Public / 公开；版本0.3.1，已移除测试版标记。条目3835669507。后续更新保持公开。
+以下为历史发布及素材记录 / Historical publication and asset records follow.
+
+已上传 / Published: https://steamcommunity.com/sharedfiles/filedetails/?id=3835669507
+Visibility: Unlisted / 不公开。以后更新此编号，不要重新创建条目。
+
+当前发布：0.3.1，API 61，不公开测试条目。工坊 IsoRim 已更新并核对，可直接订阅，无需手动 GitHub 安装。作者：水表狂魔。安装说明见 API61-INSTALL.md。
+Current: 0.3.1 API 61 unlisted test item. Updated Workshop IsoRim verified; manual GitHub installation no longer required. Author: 水表狂魔. See API61-INSTALL.md.
+
+以下为首次素材制作记录 / Historical asset preparation notes:
 工坊发布素材 / Workshop publishing assets
 
 中文

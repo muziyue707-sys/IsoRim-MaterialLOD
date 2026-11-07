@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-08",
+  "addon_version": "0.3.1",
+  "author": "水表狂魔",
+  "upstream_commit": "75e80b98e19cb2b754d40cf6bb908dfd2a28277d",
+  "host_sha256": "3a22565d697e78a5d15210c7b861f0febfd80c62c8d9d409d6529e2f990b1861",
+  "addon_sha256": "fa802a4857db7833c03ec00db75d5860687595bf8ef161b51f6ac25432afb788",
+  "tests_sha256": "5ea0f37a72a1cebf1830408a6c4b834c968fa4227e0df24869449cd0cde598d0",
+  "projectz_sha256": "b83c9aa76244f4c074de44a72124aaa8ee354a13a83011a84872e742dac013ea",
+  "old_workshop_host_sha256": "cce1341b979ea0f0b0360cfc2bf37f3eb00332b5bb6841366d8c2a71de89d3af",
+  "runs": {
+    "floor": "floor-run-api61-01",
+    "lod": "lod-run-api61-01",
+    "fallback": "compare-api61-old-workshop"
+  },
+  "assertions": "PASS",
+  "floor_phases": 21,
+  "upper_buildings": 258,
+  "hidden_projection_delta": 0,
+  "max_addon_sections_per_frame": 2,
+  "formal_and_workshop_checks": {
+    "floor": {
+      "protected": {
+        "files": 625,
+        "missing": [],
+        "changed": [],
+        "pass": true
+      },
+      "workshop": {
+        "files": 3049,
+        "missing": [],
+        "changed": [],
+        "pass": true
+      }
+    },
+    "lod": {
+      "protected": {
+        "changed": [],
+        "missing": [],
+        "files": 625,
+        "pass": true
+      },
+      "workshop": {
+        "changed": [],
+        "missing": [],
+        "files": 3049,
+        "pass": true
+      }
+    },
+    "fallback": {
+      "workshop": {
+        "pass": true,
+        "files": 3049,
+        "missing": [],
+        "changed": []
+      },
+      "protected": {
+        "pass": true,
+        "files": 625,
+        "missing": [],
+        "changed": []
+      }
+    }
+  },
+  "xml_and_bbcode": "PASS",
+  "description_utf8_bytes": 5982,
+  "visibility_requested": "unlisted",
+  "workshop_dependency_pending_api61": true,
+  "host_redistributed": false,
+  "scope": "Ordinary static buildings; no whole-game FPS, full-stack or long-save claim",
+  "package": "IsoRim-MaterialLOD-0.3.1-api61.zip",
+  "package_sha256": "7505479aebc96557ca9818e861b69f445541bdf336fa66df83da94d6f43d0a58",
+  "package_bytes": 3934897,
+  "zip_crc": "PASS",
+  "workshop_item_id": 3835669507,
+  "workshop_visibility": "unlisted",
+  "steam_submit_result": "k_EResultOK"
+}

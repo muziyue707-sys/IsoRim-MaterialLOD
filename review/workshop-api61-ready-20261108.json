@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-08",
+  "version": "0.3.1",
+  "scope": "Workshop prerequisite instructions only; addon binary and host compatibility pin unchanged",
+  "host_sha256": "3a22565d697e78a5d15210c7b861f0febfd80c62c8d9d409d6529e2f990b1861",
+  "addon_sha256": "fa802a4857db7833c03ec00db75d5860687595bf8ef161b51f6ac25432afb788",
+  "host_comparison": "workshop-host-api61-comparison.json",
+  "workshop_dependency_pending_api61": false,
+  "workshop_id": 3835669507,
+  "package": "IsoRim-MaterialLOD-0.3.1-api61-workshop.zip",
+  "package_sha256": "ac849efb89f394229100d9dbeaf50c90066b274ac477d0a04f2c5cfd6c9c9ae2",
+  "package_bytes": 3940580,
+  "xml_bbcode_zip": "PASS",
+  "runtime_validation": "Reused prior API61 acceptance: identical DLL and matching runtime resources; no new game run",
+  "submission": "PASS",
+  "submit_result": {
+    "m_eResult": 1,
+    "m_bUserNeedsToAcceptWorkshopLegalAgreement": false,
+    "m_nPublishedFileId": {
+      "m_PublishedFileId": 3835669507
+    }
+  },
+  "remote": {
+    "id": 3835669507,
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3835669507",
+    "result": "k_EResultOK",
+    "title": "IsoRim Material & LOD | 材质与细节分级 [测试版 / Test Build]",
+    "visibility": "k_ERemoteStoragePublishedFileVisibilityUnlisted",
+    "previewCount": 3,
+    "dependencies": [
+      3819577715
+    ],
+    "bytes": 2907439,
+    "ownerMatches": true,
+    "descriptionMatches": true,
+    "banned": false
+  },
+  "dependency_update_result": {
+    "m_eResult": 29,
+    "m_nPublishedFileId": {
+      "m_PublishedFileId": 3835669507
+    },
+    "m_nChildPublishedFileId": {
+      "m_PublishedFileId": 3819577715
+    }
+  },
+  "dependency_note": "DuplicateRequest on existing dependency; separate remote verification passed. No duplicate upload."
+}
