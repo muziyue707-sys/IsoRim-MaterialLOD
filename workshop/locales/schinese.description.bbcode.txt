@@ -1,0 +1,43 @@
+[b]作者：水表狂魔[/b]
+
+[h1]IsoRim 材质与细节分级[/h1]
+[b]版本 0.3.2 · API 61 · RimWorld 1.7[/b]
+
+为 IsoRim 的普通静态建筑模型提供法线贴图与两／三档 LOD。用烘焙法线表现凹槽、接缝和细小倒角；在拉远镜头时切换预先制作的简化模型。
+
+[b]安装说明：已核对更新后的工坊 IsoRim API 61，DLL 与通过运行验证的版本一致。直接订阅并更新 IsoRim Waylith 和本 Mod 即可，无需手动安装 GitHub 版。等待 Steam 下载完成后重启游戏；此前安装过本地 IsoRim 的玩家，请停用本地副本，避免重复启用。[/b]
+
+[h2]0.3.2 更新[/h2]
+同步 IsoRim 的透视法线修复，解决侧对镜头的面可能出现的斑点，并修正透视轮廓光方向。正交视角保持原逻辑。
+
+[h2]功能[/h2]
+[list]
+[*]静态建筑法线贴图，可配置强度与方向。
+[*]两档或三档 LOD，按屏幕占比切换，并使用滞回减少临界位置的反复切换。
+[*]通过 IsoRim 公开 API 接入；本附加 Mod 不使用 Harmony 补丁或内部反射。
+[*]支持 IsoRimZ 的地面层与上层静态建筑；开启楼层不再整体停用扩展。
+[*]当前层按屏幕大小分级，可见下层默认最远档（可关闭）；隐藏层暂停 LOD，窥视层继续更新。
+[*]保留共享缓存和原生阴影，限制每帧区块更新量。
+[*]版本／散列或资产检查失败时保留原生画法，最多记录警告。
+[/list]
+
+[h2]依赖与加载顺序[/h2]
+Harmony → 配套 IsoRim → 本 Mod → 兼容模型包。
+这是扩展框架，模型包需要提供并配置对应材质、法线贴图和各档模型。不会自动替换全部建筑、生成贴图或自动减面。仓库另附可选箱体示例包（44／28／12 三角面）。
+
+[h2]当前范围[/h2]
+支持范围为普通静态建筑，包括 IsoRimZ 地面与上层。车辆、活动炮塔、门叶及角色尚未验收。不包含完整 PBR、LOD 渐变过渡、阴影 LOD 或纹理卸载。减面不等于整局帧率提升，本 Mod 不承诺 FPS 或显存收益。
+
+着色器由本子 Mod 维护。IsoRim 内部顶点属性、光照参数和裁切约定不保证稳定，更新后可能需要重新适配。
+模型作者请阅读 MATERIALS.md、LOD.md、FLOORS.md 与 review/floor-validation.md。本版已针对作者发布的 API 61 DLL 适配；以后的 IsoRim 更新仍需检查兼容性。
+
+[h2]链接[/h2]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3819577715]订阅 IsoRim Waylith[/url]
+[url=https://github.com/muziyue707-sys/IsoRim-MaterialLOD]源码、安装与模型接入[/url]
+[url=https://github.com/peren717/IsoRim-1.7/pull/6]已合入的 IsoRim API PR[/url]
+[url=https://github.com/peren717/IsoRim-1.7]IsoRim 项目[/url]
+
+[h2]制作与致谢[/h2]
+附加 Mod：水表狂魔。IsoRim：peren717。部分着色器代码基于 IsoRim，保留原 MIT 许可声明。
+
+[i]详情图为原理示意。封面基于实机截图编辑，斜分区与线框为展示示意，不代表真实网格拓扑截图。[/i]

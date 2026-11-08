@@ -3,8 +3,8 @@ param(
  [ValidateSet('Public','Unlisted')][string]$Visibility='Public',
  [Parameter(Mandatory=$true)][string]$ExpectedSteamId,
  [string]$GameDir='E:\SteamLibrary\steamapps\common\RimWorld',
- [string]$ReleaseDir=(Join-Path $PSScriptRoot '..\dist\workshop-20261108-release'),
- [string]$ChangeNote='0.3.1: public IsoRim API 61 integration; normal materials, floor-aware LOD; bilingual publishing assets. Author: 水表狂魔.'
+ [string]$ReleaseDir=(Join-Path $PSScriptRoot '..\dist\workshop-032-20261108'),
+ [string]$ChangeNote='0.3.2: fix perspective face-normal speckling and rim-light direction; preserve orthographic behavior. Author: 水表狂魔.'
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
@@ -21,7 +21,7 @@ try {
  $receipt=Join-Path $ReleaseDir 'item.json'
  $idFile=Join-Path $root 'mod\About\PublishedFileId.txt'
  $stage=Join-Path $ReleaseDir 'content'
- $description=[IO.File]::ReadAllText((Join-Path $root 'workshop\description.bbcode.txt')).Replace("`r`n","`n")
+ $description=[IO.File]::ReadAllText((Join-Path $root 'workshop\locales\english.description.bbcode.txt')).Replace("`r`n","`n")
  if(Test-Path $receipt){$item=Get-Content $receipt -Raw|ConvertFrom-Json; $id=[ulong]$item.id}
  elseif(Test-Path $idFile){$id=[ulong]([IO.File]::ReadAllText($idFile).Trim())}
  elseif($Mode -eq 'Upload'){
@@ -43,7 +43,7 @@ try {
   $gallery=@(); if($previews -eq 0){$gallery=@(Get-ChildItem (Join-Path $root 'workshop\details') -Filter '*.jpg'|Sort-Object Name|Select-Object -ExpandProperty FullName)}
   elseif($previews -ne 3){throw 'Unexpected gallery count; inspect before retrying'}
   [IO.File]::WriteAllText((Join-Path $stage 'About\PublishedFileId.txt'),[string]$id)
-  $result=[IrmeWorkshopPublisher]::Upload($id,([IO.File]::ReadAllText((Join-Path $root 'workshop\title.txt')).Trim()),$description,(Resolve-Path $stage).Path,(Join-Path $root 'workshop\cover.jpg'),[string[]]$gallery,($Visibility -eq 'Public'),$ChangeNote)
+  $result=[IrmeWorkshopPublisher]::Upload($id,([IO.File]::ReadAllText((Join-Path $root 'workshop\locales\english.title.txt')).Trim()),$description,(Resolve-Path $stage).Path,(Join-Path $root 'workshop\cover.jpg'),[string[]]$gallery,($Visibility -eq 'Public'),$ChangeNote)
   $result|ConvertTo-Json -Depth 3|Set-Content (Join-Path $ReleaseDir 'submit-result.json')
   if($result.m_eResult -ne [Steamworks.EResult]::k_EResultOK){throw "Submit failed: $($result.m_eResult)"}
   if($result.m_bUserNeedsToAcceptWorkshopLegalAgreement){throw "User must accept Workshop agreement for item $id"}

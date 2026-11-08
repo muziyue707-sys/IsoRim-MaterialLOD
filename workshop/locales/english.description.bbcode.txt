@@ -1,0 +1,43 @@
+[b]Author: 水表狂魔[/b]
+
+[h1]IsoRim Material & LOD[/h1]
+[b]Version 0.3.2 · API 61 · RimWorld 1.7[/b]
+
+Adds baked normal maps and two- or three-level LOD to ordinary static building models in IsoRim. Normal maps represent grooves, seams, and small bevels; prepared simpler meshes are selected as you zoom out.
+
+[b]INSTALLATION: Updated Workshop IsoRim API 61 has been verified against the runtime-tested DLL. Subscribe to and update IsoRim Waylith and this addon; manual GitHub installation is no longer required. Wait for Steam downloads to finish and restart the game. If you previously installed local IsoRim, disable that duplicate.[/b]
+
+[h2]0.3.2 update[/h2]
+Ports IsoRim’s perspective face-normal fix to prevent speckling on side faces and correct perspective rim-light direction. Orthographic behavior is unchanged.
+
+[h2]Features[/h2]
+[list]
+[*]Normal maps for static buildings, with configurable strength and orientation.
+[*]Two- or three-level LOD selected by screen size, with hysteresis to reduce threshold switching.
+[*]Public IsoRim API integration, with no addon Harmony patches or private reflection.
+[*]Supports static buildings on IsoRimZ ground and upper floors; enabling floors does not disable the extension.
+[*]Screen-size LOD on the viewed floor, optional lowest LOD on visible lower floors, suspended LOD on hidden floors, and active LOD while peeking.
+[*]Shared caches and native shadows are retained; section updates remain budgeted.
+[*]Host/asset rejection retains native rendering with at most warning logs.
+[/list]
+
+[h2]Requirements and load order[/h2]
+Harmony → matching IsoRim → this addon → compatible model packs.
+This is an extension framework. Model packs must supply and configure materials, normal maps, and LOD meshes. It does not replace all buildings, generate textures, or simplify meshes automatically. The repository includes an optional crate example pack (44/28/12 triangles).
+
+[h2]Current scope[/h2]
+Supports ordinary static buildings, including IsoRimZ ground and upper floors. Vehicles, moving turrets, doors, and characters are not validated. Full PBR, LOD crossfading, shadow LOD, and texture eviction are not included. Fewer triangles do not guarantee faster gameplay; no FPS or VRAM savings are promised.
+
+This addon owns its shader. Internal IsoRim vertex attributes, lighting parameters, and clipping conventions are not guaranteed stable; updates may require adaptation.
+Model authors: see MATERIALS.md, LOD.md, FLOORS.md, and review/floor-validation.md. This build targets the author’s published API 61 DLL; later IsoRim updates still require compatibility review.
+
+[h2]Links[/h2]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3819577715]Subscribe to IsoRim Waylith[/url]
+[url=https://github.com/muziyue707-sys/IsoRim-MaterialLOD]Source, installation, and model integration[/url]
+[url=https://github.com/peren717/IsoRim-1.7/pull/6]Merged IsoRim API PR[/url]
+[url=https://github.com/peren717/IsoRim-1.7]IsoRim project[/url]
+
+[h2]Credits[/h2]
+Addon: 水表狂魔. IsoRim: peren717. Portions of shader code derive from IsoRim and retain its MIT license notice.
+
+[i]Detail panels are concept illustrations. Cover art is edited from a game screenshot; the diagonal material split and wireframes are illustrative, not a capture of actual mesh topology.[/i]

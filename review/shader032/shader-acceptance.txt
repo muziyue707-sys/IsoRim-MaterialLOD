@@ -1,0 +1,65 @@
+PASS addon enabled
+PASS ortho45 camera projection
+PASS ortho45 first-person state
+PASS ortho45 normal/tangent stream
+PASS ortho45 normal texture bound
+PASS ortho45 normal/tangent stream
+PASS ortho45 normal texture bound
+PASS ortho45 actual custom section material
+VIEW ortho45 yaw=45 squash=0.003 fov=0
+PASS perspective45 camera projection
+PASS perspective45 first-person state
+PASS perspective45 normal/tangent stream
+PASS perspective45 normal texture bound
+PASS perspective45 normal/tangent stream
+PASS perspective45 normal texture bound
+PASS perspective45 actual custom section material
+VIEW perspective45 yaw=45 squash=0.003 fov=40
+PASS perspective90 camera projection
+PASS perspective90 first-person state
+PASS perspective90 normal/tangent stream
+PASS perspective90 normal texture bound
+PASS perspective90 normal/tangent stream
+PASS perspective90 normal texture bound
+PASS perspective90 actual custom section material
+VIEW perspective90 yaw=90 squash=0.003 fov=40
+PASS perspective270 camera projection
+PASS perspective270 first-person state
+PASS perspective270 normal/tangent stream
+PASS perspective270 normal texture bound
+PASS perspective270 normal/tangent stream
+PASS perspective270 normal texture bound
+PASS perspective270 actual custom section material
+VIEW perspective270 yaw=270 squash=0.003 fov=40
+PASS free915 camera projection
+PASS free915 first-person state
+PASS free915 normal/tangent stream
+PASS free915 normal texture bound
+PASS free915 normal/tangent stream
+PASS free915 normal texture bound
+PASS free915 actual custom section material
+VIEW free915 yaw=91.5 squash=0.003 fov=40
+PASS rim90 camera projection
+PASS rim90 first-person state
+PASS rim90 normal/tangent stream
+PASS rim90 normal texture bound
+PASS rim90 normal/tangent stream
+PASS rim90 normal texture bound
+PASS rim90 actual custom section material
+VIEW rim90 yaw=90 squash=0.003 fov=40
+PASS firstperson camera projection
+PASS firstperson first-person state
+PASS firstperson normal/tangent stream
+PASS firstperson normal texture bound
+PASS firstperson normal/tangent stream
+PASS firstperson normal texture bound
+PASS firstperson actual custom section material
+VIEW firstperson yaw=0 squash=0.003 fov=70
+PASS ortho_return camera projection
+PASS ortho_return first-person state
+PASS ortho_return normal/tangent stream
+PASS ortho_return normal texture bound
+PASS ortho_return normal/tangent stream
+PASS ortho_return normal texture bound
+PASS ortho_return actual custom section material
+VIEW ortho_return yaw=45 squash=0.003 fov=0

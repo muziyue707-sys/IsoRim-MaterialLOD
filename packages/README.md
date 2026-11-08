@@ -1,5 +1,9 @@
 # Current public release
 
+Use [IsoRim-MaterialLOD-0.3.2-release.zip](IsoRim-MaterialLOD-0.3.2-release.zip). Version 0.3.2 ports the upstream perspective face-normal and rim-light correction, retaining the API61 host pin and public Workshop item 3835669507. See [validation](../review/shader032-validation.md) and [package provenance](../review/shader032-provenance.json). Workshop titles/descriptions now have separate English and Simplified Chinese variants under `workshop/locales/`.
+
+## Previous 0.3.1 release
+
 Use `IsoRim-MaterialLOD-0.3.1-release.zip`. Workshop item 3835669507 is Public; Test Build labels were removed at the user's request on 2026-11-08. Version and runtime binaries remain 0.3.1, with verified Workshop API61 support. [Remote publication verification](../review/workshop-public-release-20261108.json). Full private upload receipts remain local. Earlier packages and status descriptions below are historical.
 
 # Previous API 61 package

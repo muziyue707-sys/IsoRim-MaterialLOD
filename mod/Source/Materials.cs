@@ -47,7 +47,7 @@ namespace RimZrism.Materials
             Materials.Initialize();
             ModelLods.Initialize();
             Enabled = true;
-            Log.Message("[IRME] 0.3.1 API-only addon initialized; surfaces=" + Materials.LoadedModels + " LOD chains=" + ModelLods.ChainsLoaded);
+            Log.Message("[IRME] 0.3.2 API-only addon initialized; surfaces=" + Materials.LoadedModels + " LOD chains=" + ModelLods.ChainsLoaded);
         }
     }
 

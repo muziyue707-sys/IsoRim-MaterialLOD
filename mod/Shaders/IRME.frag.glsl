@@ -311,11 +311,21 @@ float SteppedAmount(float t, float bands, float tw)
     return (floor(x) + smoothstep(0.5 - w, 0.5 + w, fract(x))) / k;
 }
 
-// Rim light: how much light edge a model face takes, 0..1. Faces seen almost edge-on (the silhouette) on the side away
-// from the sun; tops and faces turned to the camera none. n is turned toward the camera.
-float RimAmount(vec3 n, vec3 L)
+// IsoRim 3a5697e: p is in true space, whereas _IsoEye.xyz is in drawn space.
+// Perspective uses the per-fragment eye direction; orthographic retains its camera axis.
+vec3 ToEye(vec3 p)
 {
-    vec3 V = normalize(uMaterial._IsoView.xyz);
+    vec4 eye = uMaterial._IsoEye;
+    if (eye.w > 0.5)
+        return vec3(eye.x, eye.y * uMaterial._IsoView.w, eye.z) - p;
+    return uMaterial._IsoView.xyz;
+}
+
+// Rim light: how much light edge a model face takes, 0..1. Faces seen almost edge-on (the silhouette) on the side away
+// from the sun; tops and faces turned to the camera none. n faces the camera; p is in true space.
+float RimAmount(vec3 n, vec3 L, vec3 p)
+{
+    vec3 V = normalize(ToEye(p));
     float edge = smoothstep(0.4, 0.9, 1.0 - clamp(dot(n, V), 0.0, 1.0));
     vec2 nf = n.xz;
     float side = length(nf);
@@ -374,7 +384,7 @@ void main()
     vec3 n = cross(dFdx(p), dFdy(p));
     float len = length(n);
     n = len > 1e-20 ? n / len : vec3(0.0, 1.0, 0.0);
-    if (dot(n, uMaterial._IsoView.xyz) < 0.0)
+    if (dot(n, ToEye(p)) < 0.0)
         n = -n;
     vec3 faceNormal = n; // Keep geometric normal for native light-pass cell sampling.
     vec3 N = normalize(vSurfaceNormal);
@@ -535,7 +545,7 @@ void main()
                 vec3 rn = smoothTex ? n : faceNormal;
 #endif
                 // Light of the sky colour: none at night; the game's light then scales it like the rest of the face.
-                rim = uMaterial._IsoSky.rgb * (toon.y * RimAmount(rn, L));
+                rim = uMaterial._IsoSky.rgb * (toon.y * RimAmount(rn, L, p));
             }
         }
         else if (mode < 2.5)

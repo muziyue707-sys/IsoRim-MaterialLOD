@@ -1,4 +1,4 @@
-param([string]$RunName='lod-run01', [ValidateSet('lod','material','comparison','floor')][string]$Mode='lod', [switch]$Baseline, [string]$HostDll, [switch]$FreshComparison, [string]$IsoRimSource=(Join-Path $PSScriptRoot '..\..\IsoRim-api61-release'))
+param([string]$RunName='lod-run01', [ValidateSet('lod','material','comparison','floor','shader')][string]$Mode='lod', [switch]$Baseline, [string]$HostDll, [switch]$FreshComparison, [string]$IsoRimSource=(Join-Path $PSScriptRoot '..\..\IsoRim-api61-release'))
 $ErrorActionPreference='Stop'
 $root=Join-Path $PSScriptRoot '..\validation'
 $repo=$IsoRimSource

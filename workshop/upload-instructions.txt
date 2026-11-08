@@ -1,3 +1,6 @@
+当前版本0.3.2，公开；按 Steam 语言偏好分别显示中文/英文。当前发布输入为 locales/，使用 PublishWorkshop.ps1 上传内容，PublishWorkshopLanguages.ps1 更新两种语言。
+Current: 0.3.2 Public, native English/Simplified Chinese metadata. Use locales/ publishing inputs.
+
 当前状态 / Current status: Public / 公开；版本0.3.1，已移除测试版标记。条目3835669507。后续更新保持公开。
 以下为历史发布及素材记录 / Historical publication and asset records follow.
 

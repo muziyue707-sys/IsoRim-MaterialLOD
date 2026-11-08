@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-08",
+  "version": "0.3.2",
+  "upstream_shader_fix": "3a5697e5f7e482bb04a9b7594263a174bea92070",
+  "host_sha256": "3a22565d697e78a5d15210c7b861f0febfd80c62c8d9d409d6529e2f990b1861",
+  "addon_sha256": "d4be98f38c1fdeee141e0654bbe5fa6d399197d59f16b1c6ab9a01e0fc759958",
+  "shader_sha256": "739725af3ffcb38bccf6904a811eac352119507defc6241f6fde8f22fd3dfd1d",
+  "runs": {
+    "shader": "shader-run032-02",
+    "floor": "floor-run032-01"
+  },
+  "protection": {
+    "shader": {
+      "workshop": {
+        "missing": [],
+        "files": 3053,
+        "pass": true,
+        "changed": []
+      },
+      "protected": {
+        "missing": [],
+        "files": 625,
+        "pass": true,
+        "changed": []
+      }
+    },
+    "floor": {
+      "protected": {
+        "changed": [],
+        "files": 625,
+        "pass": true,
+        "missing": []
+      },
+      "workshop": {
+        "changed": [],
+        "files": 3053,
+        "pass": true,
+        "missing": []
+      }
+    }
+  },
+  "shader_camera_phases": 8,
+  "floor_phases": 21,
+  "game_version": "1.7.5000 rev1275",
+  "scope": "Ordinary static buildings; no full mod-stack, dynamic-model, FPS, or long-save claim",
+  "workshop_id": 3835669507,
+  "visibility": "public",
+  "publication": "PASS",
+  "package": "IsoRim-MaterialLOD-0.3.2-release.zip",
+  "package_sha256": "c1f4b99c724c47ba229e0cf9c9708fcdb145a0cd0abd5b422a88542ea23440f5",
+  "package_bytes": 2910345,
+  "zip_crc": "PASS",
+  "remote": {
+    "id": 3835669507,
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3835669507",
+    "result": "k_EResultOK",
+    "title": "IsoRim Material & LOD",
+    "visibility": "k_ERemoteStoragePublishedFileVisibilityPublic",
+    "previewCount": 3,
+    "dependencies": [
+      3819577715
+    ],
+    "bytes": 2913556,
+    "ownerMatches": true,
+    "descriptionMatches": true,
+    "banned": false
+  },
+  "localized_pages": [
+    {
+      "id": 3835669507,
+      "language": "english",
+      "result": "k_EResultOK",
+      "title": "IsoRim Material & LOD",
+      "titleMatches": true,
+      "descriptionMatches": true,
+      "visibility": "k_ERemoteStoragePublishedFileVisibilityPublic",
+      "previewCount": 3,
+      "dependencies": [
+        3819577715
+      ],
+      "bytes": 2913556,
+      "contentSizeUnchanged": true
+    },
+    {
+      "id": 3835669507,
+      "language": "schinese",
+      "result": "k_EResultOK",
+      "title": "IsoRim 材质与细节分级",
+      "titleMatches": true,
+      "descriptionMatches": true,
+      "visibility": "k_ERemoteStoragePublishedFileVisibilityPublic",
+      "previewCount": 3,
+      "dependencies": [
+        3819577715
+      ],
+      "bytes": 2913556,
+      "contentSizeUnchanged": true
+    }
+  ],
+  "package_note": "Duplicate Workshop JPEG marketing copies omitted; all mod content and localized page text retained."
+}

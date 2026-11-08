@@ -4,12 +4,12 @@
   <author>水表狂魔</author>
   <packageId>shuib.rimzrism.materials.example</packageId>
   <supportedVersions><li>1.7</li></supportedVersions>
-  <modVersion>0.3.1</modVersion>
-  <description><![CDATA[【中文】可选示例包 · 版本 0.3.1
+  <modVersion>0.3.2</modVersion>
+  <description><![CDATA[【中文】可选示例包 · 版本 0.3.2
 演示 IsoRim Material and LOD 的静态建筑法线材质及两／三档 LOD 配置。箱体样件使用 44／28／12 三角面的网格。需要作者 GitHub 已合入的 IsoRim API 61 版（提交 75e80b9）与主扩展 Mod；放在主扩展之后加载。
 这是示例资源包，不会让所有建筑自动获得法线贴图或 LOD。安装和验证范围请参阅仓库 README、MATERIALS.md、LOD.md 与 VALIDATION.md。
 
-【English】Optional example pack · Version 0.3.1
+【English】Optional example pack · Version 0.3.2
 Demonstrates normal-mapped static buildings and two-/three-level LOD configuration for IsoRim Material and LOD. The crate sample uses meshes with 44/28/12 triangles. Requires the author’s merged GitHub IsoRim API 61 build (commit 75e80b9) and the main addon; load this pack after the addon.
 This example does not automatically add normal maps or LOD to all buildings. See README, MATERIALS.md, LOD.md, and VALIDATION.md in the repository for installation and validation scope.
 

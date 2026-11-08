@@ -1,6 +1,6 @@
 # API 61 安装说明 / Installation
 
-作者 / Author: **水表狂魔**. Addon version **0.3.1**.
+作者 / Author: **水表狂魔**. Addon version **0.3.2**.
 
 ## 中文
 

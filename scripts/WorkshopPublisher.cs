@@ -24,6 +24,7 @@ public static class IrmeWorkshopPublisher
     public static SubmitItemUpdateResult_t Upload(ulong id, string title, string description, string content, string preview, string[] gallery, bool publiclyVisible, string changeNote)
     {
         var h = SteamUGC.StartItemUpdate(new AppId_t(294100), new PublishedFileId_t(id));
+        Check(SteamUGC.SetItemUpdateLanguage(h, "english"), "language");
         Check(SteamUGC.SetItemTitle(h, title), "title");
         Check(SteamUGC.SetItemDescription(h, description), "description");
         Check(SteamUGC.SetItemTags(h, new List<string> { "Mod", "1.7" }), "tags");
@@ -35,9 +36,18 @@ public static class IrmeWorkshopPublisher
         return Wait<SubmitItemUpdateResult_t>(SteamUGC.SubmitItemUpdate(h, changeNote), 900);
     }
     public static AddUGCDependencyResult_t Dependency(ulong id) => Wait<AddUGCDependencyResult_t>(SteamUGC.AddDependency(new PublishedFileId_t(id), new PublishedFileId_t(3819577715)));
-    public static SteamUGCDetails_t Query(ulong id, out uint previews, out ulong[] dependencies)
+    public static SubmitItemUpdateResult_t UpdateTranslation(ulong id, string language, string title, string description)
+    {
+        var h = SteamUGC.StartItemUpdate(new AppId_t(294100), new PublishedFileId_t(id));
+        Check(SteamUGC.SetItemUpdateLanguage(h, language), "language");
+        Check(SteamUGC.SetItemTitle(h, title), "localized title");
+        Check(SteamUGC.SetItemDescription(h, description), "localized description");
+        return Wait<SubmitItemUpdateResult_t>(SteamUGC.SubmitItemUpdate(h, null));
+    }
+    public static SteamUGCDetails_t Query(ulong id, out uint previews, out ulong[] dependencies, string language = "english")
     {
         var h = SteamUGC.CreateQueryUGCDetailsRequest(new[] { new PublishedFileId_t(id) }, 1);
+        Check(SteamUGC.SetLanguage(h, language), "query language");
         SteamUGC.SetReturnChildren(h, true); SteamUGC.SetReturnAdditionalPreviews(h, true);
         SteamUGC.SetReturnLongDescription(h, true); SteamUGC.SetAllowCachedResponse(h, 0);
         try
