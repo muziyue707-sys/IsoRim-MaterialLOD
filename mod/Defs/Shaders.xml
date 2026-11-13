@@ -1,4 +1,8 @@
 <Defs><ShaderDef><defName>IRME_NormalMapped</defName><shaderProgram>
 <vertexShaderFileName>IRME.vert.glsl</vertexShaderFileName><fragmentShaderFileName>IRME.frag.glsl</fragmentShaderFileName>
 <blendMode>Opaque</blendMode><cullMode>None</cullMode><renderQueue>2001</renderQueue>
+</shaderProgram></ShaderDef>
+<ShaderDef><defName>IRME_DynamicNormalMapped</defName><shaderProgram>
+<vertexShaderFileName>IRME_Dynamic.vert.glsl</vertexShaderFileName><fragmentShaderFileName>IRME_Dynamic.frag.glsl</fragmentShaderFileName>
+<blendMode>Opaque</blendMode><cullMode>None</cullMode><renderQueue>2001</renderQueue>
 </shaderProgram></ShaderDef></Defs>

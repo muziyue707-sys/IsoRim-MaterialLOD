@@ -1,11 +1,13 @@
 param(
  [Parameter(Mandatory=$true)][string]$ExpectedSteamId,
  [ValidateSet('Upload','Verify')][string]$Mode='Verify',
- [string]$GameDir='E:\SteamLibrary\steamapps\common\RimWorld'
+ [string]$GameDir='E:\SteamLibrary\steamapps\common\RimWorld',
+ [string]$ReceiptDir=(Join-Path $PSScriptRoot '..\dist\workshop-localization-040-20261114'),
+ [string]$ReviewPath=(Join-Path $PSScriptRoot '..\review\workshop-localization-040-20261114.json')
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
-$receipt=Join-Path $root 'dist\workshop-localization-20261108'
+$receipt=$ReceiptDir
 New-Item -ItemType Directory -Force -Path $receipt|Out-Null
 $id=[ulong]([IO.File]::ReadAllText((Join-Path $root 'mod\About\PublishedFileId.txt')).Trim())
 $env:SteamAppId='294100'; $env:SteamGameId='294100'; $env:PATH="$GameDir;$env:PATH"
@@ -34,5 +36,5 @@ try {
   if($d.m_eResult -ne [Steamworks.EResult]::k_EResultOK -or !$report.titleMatches -or !$report.descriptionMatches -or !$report.contentSizeUnchanged -or $d.m_eVisibility -ne $before.m_eVisibility -or $previews -ne 3 -or $children -notcontains [ulong]3819577715){throw "Translation verification failed: $language"}
   $reports+=$report
  }
- $reports|ConvertTo-Json -Depth 4|Tee-Object -FilePath (Join-Path $root 'review\workshop-localization-20261108.json')
+ $reports|ConvertTo-Json -Depth 4|Tee-Object -FilePath $ReviewPath
 }finally{[Steamworks.SteamAPI]::Shutdown()}

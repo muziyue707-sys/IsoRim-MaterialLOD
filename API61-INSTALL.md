@@ -1,5 +1,7 @@
 # API 61 安装说明 / Installation
 
+Historical 0.3.2 installation record. For the 0.4.0 API77 candidate use [INSTALL.md](INSTALL.md).
+
 作者 / Author: **水表狂魔**. Addon version **0.3.2**.
 
 ## 中文

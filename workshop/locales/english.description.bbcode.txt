@@ -1,14 +1,14 @@
 [b]Author: 水表狂魔[/b]
 
 [h1]IsoRim Material & LOD[/h1]
-[b]Version 0.3.2 · API 61 · RimWorld 1.7[/b]
+[b]Version 0.4.0 · Matching API 77 · RimWorld 1.7[/b]
 
-Adds baked normal maps and two- or three-level LOD to ordinary static building models in IsoRim. Normal maps represent grooves, seams, and small bevels; prepared simpler meshes are selected as you zoom out.
+Adds baked normal maps and two- or three-level LOD to ordinary static building models in IsoRim, plus normal/local-AO materials and automatic LOD services for explicitly integrated dynamic model packs. Normal maps represent grooves, seams, and small bevels; prepared simpler meshes are selected as you zoom out.
 
-[b]INSTALLATION: Updated Workshop IsoRim API 61 has been verified against the runtime-tested DLL. Subscribe to and update IsoRim Waylith and this addon; manual GitHub installation is no longer required. Wait for Steam downloads to finish and restart the game. If you previously installed local IsoRim, disable that duplicate.[/b]
+[b]INSTALLATION: This version targets Workshop IsoRim API 77 and retains exact DLL compatibility checks. Subscribe to and update IsoRim Waylith and this addon; no separate GitHub host installation is required. Wait for Steam downloads to finish and restart the game. Disable duplicate local copies.[/b]
 
-[h2]0.3.2 update[/h2]
-Ports IsoRim’s perspective face-normal fix to prevent speckling on side faces and correct perspective rim-light direction. Orthographic behavior is unchanged.
+[h2]0.4.0 update[/h2]
+Adds a dynamic model service and private material lifecycle using current public drawing APIs. A compatible vehicle pack by itself retains basic camouflage 3D at LOD0; enabling this addon supplies baked normals, local AO and automatic LOD. No Vehicle Framework dependency in this addon: paint interpretation, turrets, recoil and upgrades remain in the vehicle adapter. Unintegrated models are not automatically enhanced.
 
 [h2]Features[/h2]
 [list]
@@ -26,10 +26,10 @@ Harmony → matching IsoRim → this addon → compatible model packs.
 This is an extension framework. Model packs must supply and configure materials, normal maps, and LOD meshes. It does not replace all buildings, generate textures, or simplify meshes automatically. The repository includes an optional crate example pack (44/28/12 triangles).
 
 [h2]Current scope[/h2]
-Supports ordinary static buildings, including IsoRimZ ground and upper floors. Vehicles, moving turrets, doors, and characters are not validated. Full PBR, LOD crossfading, shadow LOD, and texture eviction are not included. Fewer triangles do not guarantee faster gameplay; no FPS or VRAM savings are promised.
+Supports ordinary static buildings on IsoRimZ ground and upper floors. Dynamic model packs must explicitly integrate and manage their motion and lifecycle; one pack's acceptance does not establish compatibility with all vehicles, doors or characters. Full PBR, LOD crossfading, shadow LOD and texture eviction on every LOD change are not included. Fewer triangles do not guarantee faster gameplay; no FPS or VRAM savings are promised.
 
 This addon owns its shader. Internal IsoRim vertex attributes, lighting parameters, and clipping conventions are not guaranteed stable; updates may require adaptation.
-Model authors: see MATERIALS.md, LOD.md, FLOORS.md, and review/floor-validation.md. This build targets the author’s published API 61 DLL; later IsoRim updates still require compatibility review.
+Model authors: see MATERIALS.md, LOD.md, FLOORS.md and DYNAMIC.md. This build targets the author's published API 77 DLL; later IsoRim updates still require compatibility review.
 
 [h2]Links[/h2]
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3819577715]Subscribe to IsoRim Waylith[/url]

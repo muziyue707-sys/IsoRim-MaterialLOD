@@ -3,8 +3,8 @@ param(
  [ValidateSet('Public','Unlisted')][string]$Visibility='Public',
  [Parameter(Mandatory=$true)][string]$ExpectedSteamId,
  [string]$GameDir='E:\SteamLibrary\steamapps\common\RimWorld',
- [string]$ReleaseDir=(Join-Path $PSScriptRoot '..\dist\workshop-032-20261108'),
- [string]$ChangeNote='0.3.2: fix perspective face-normal speckling and rim-light direction; preserve orthographic behavior. Author: 水表狂魔.'
+ [string]$ReleaseDir=(Join-Path $PSScriptRoot '..\dist\workshop-040-20261114'),
+ [string]$ChangeNote='0.4.0: optional dynamic normal/AO materials and LOD service; API77 compatibility, shared textures and safe private-material release. Compatible vehicle packs retain base camouflage 3D at LOD0 without this addon. Author: 水表狂魔.'
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent

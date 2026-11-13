@@ -1,0 +1,160 @@
+PASS contract v1 / exact host gate active
+PASS production assembly has no Vehicles or Harmony reference
+PASS initial three LOD levels
+PASS near downward hysteresis
+PASS near upward hysteresis
+PASS far hysteresis both directions
+PASS one / two level clamp
+PASS invalid projection safe LOD0
+PASS invalid thresholds safe LOD0
+PASS invalid hysteresis safe LOD0
+PASS IMB1 test fixture
+PASS two enhanced materials created
+PASS private material instances
+PASS main mod owns dynamic shader
+PASS source shader and texture unchanged
+PASS borrowed base and paint textures preserved across shader switch
+PASS paint color preserved across shader switch
+PASS shared normal cache
+PASS optional AO white fallback
+PASS two instances do not share paint state
+PASS public configure creates separate host light passes
+PASS missing normal returns null
+PASS relative normal path rejected quietly
+PASS failed material constructions not retained
+PASS create/release cycle 0
+PASS cycle light registration released 0
+PASS create/release cycle 1
+PASS cycle light registration released 1
+PASS create/release cycle 2
+PASS cycle light registration released 2
+PASS create/release cycle 3
+PASS cycle light registration released 3
+PASS create/release cycle 4
+PASS cycle light registration released 4
+PASS create/release cycle 5
+PASS cycle light registration released 5
+PASS create/release cycle 6
+PASS cycle light registration released 6
+PASS create/release cycle 7
+PASS cycle light registration released 7
+PASS create/release cycle 8
+PASS cycle light registration released 8
+PASS create/release cycle 9
+PASS cycle light registration released 9
+PASS create/release cycle 10
+PASS cycle light registration released 10
+PASS create/release cycle 11
+PASS cycle light registration released 11
+PASS create/release cycle 12
+PASS cycle light registration released 12
+PASS create/release cycle 13
+PASS cycle light registration released 13
+PASS create/release cycle 14
+PASS cycle light registration released 14
+PASS create/release cycle 15
+PASS cycle light registration released 15
+PASS create/release cycle 16
+PASS cycle light registration released 16
+PASS create/release cycle 17
+PASS cycle light registration released 17
+PASS create/release cycle 18
+PASS cycle light registration released 18
+PASS create/release cycle 19
+PASS cycle light registration released 19
+PASS create/release cycle 20
+PASS cycle light registration released 20
+PASS create/release cycle 21
+PASS cycle light registration released 21
+PASS create/release cycle 22
+PASS cycle light registration released 22
+PASS create/release cycle 23
+PASS cycle light registration released 23
+PASS create/release cycle 24
+PASS cycle light registration released 24
+PASS create/release cycle 25
+PASS cycle light registration released 25
+PASS create/release cycle 26
+PASS cycle light registration released 26
+PASS create/release cycle 27
+PASS cycle light registration released 27
+PASS create/release cycle 28
+PASS cycle light registration released 28
+PASS create/release cycle 29
+PASS cycle light registration released 29
+PASS create/release cycle 30
+PASS cycle light registration released 30
+PASS create/release cycle 31
+PASS cycle light registration released 31
+PASS create/release cycle 32
+PASS cycle light registration released 32
+PASS create/release cycle 33
+PASS cycle light registration released 33
+PASS create/release cycle 34
+PASS cycle light registration released 34
+PASS create/release cycle 35
+PASS cycle light registration released 35
+PASS create/release cycle 36
+PASS cycle light registration released 36
+PASS create/release cycle 37
+PASS cycle light registration released 37
+PASS create/release cycle 38
+PASS cycle light registration released 38
+PASS create/release cycle 39
+PASS cycle light registration released 39
+PASS create/release cycle 40
+PASS cycle light registration released 40
+PASS create/release cycle 41
+PASS cycle light registration released 41
+PASS create/release cycle 42
+PASS cycle light registration released 42
+PASS create/release cycle 43
+PASS cycle light registration released 43
+PASS create/release cycle 44
+PASS cycle light registration released 44
+PASS create/release cycle 45
+PASS cycle light registration released 45
+PASS create/release cycle 46
+PASS cycle light registration released 46
+PASS create/release cycle 47
+PASS cycle light registration released 47
+PASS create/release cycle 48
+PASS cycle light registration released 48
+PASS create/release cycle 49
+PASS cycle light registration released 49
+PASS create/release cycle 50
+PASS cycle light registration released 50
+PASS create/release cycle 51
+PASS cycle light registration released 51
+PASS create/release cycle 52
+PASS cycle light registration released 52
+PASS create/release cycle 53
+PASS cycle light registration released 53
+PASS create/release cycle 54
+PASS cycle light registration released 54
+PASS create/release cycle 55
+PASS cycle light registration released 55
+PASS create/release cycle 56
+PASS cycle light registration released 56
+PASS create/release cycle 57
+PASS cycle light registration released 57
+PASS create/release cycle 58
+PASS cycle light registration released 58
+PASS create/release cycle 59
+PASS cycle light registration released 59
+PASS create/release cycle 60
+PASS cycle light registration released 60
+PASS create/release cycle 61
+PASS cycle light registration released 61
+PASS create/release cycle 62
+PASS cycle light registration released 62
+PASS create/release cycle 63
+PASS cycle light registration released 63
+PASS 64 cycles preserve bounded live materials and shared cache
+PASS unowned source release is no-op
+PASS release removes host light registration immediately
+PASS original retained until queued draws finish
+PASS original destroyed after frame grace period
+PASS all previous deferred objects collected
+PASS all private materials released
+PASS borrowed resources remain alive

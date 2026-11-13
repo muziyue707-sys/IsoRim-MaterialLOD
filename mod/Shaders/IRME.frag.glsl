@@ -410,6 +410,7 @@ void main()
 #endif
 #ifdef USE_TEXTURE
     bool smoothTex = vColor.a > 3.0;
+    bool roundTex = vColor.a > 7.0;
     if (uMaterial._IsoToon.x > 1.5)
     {
         vec3 sn = vColor.rgb * inversesqrt(max(1e-12, dot(vColor.rgb, vColor.rgb)));
@@ -433,7 +434,7 @@ void main()
         discard;
 
 #ifdef USE_TEXTURE
-    vec4 color = smoothTex ? vec4(1.0, 1.0, 1.0, vColor.a - 4.0) * uMaterial._Color : vColor * uMaterial._Color;
+    vec4 color = smoothTex ? vec4(1.0, 1.0, 1.0, vColor.a - (roundTex ? 8.0 : 4.0)) * uMaterial._Color : vColor * uMaterial._Color;
 #else
     vec4 color = vColor * uMaterial._Color;
 #endif
@@ -472,7 +473,9 @@ void main()
             vec4 fg = uMaterial._IsoFloorGlow;
             if (fg.x > 0.5 && fg.y > 0.0)
             {
-                xz.y += clamp(floor((p.y + 0.01) / fg.y), 0.0, fg.x) * fg.z;
+                float k = uMaterial._IsoOwnerFloor > 0.5 ? clamp(uMaterial._IsoOwnerFloor - 1.0, 0.0, fg.x)
+                    : clamp(floor((p.y + 0.01) / fg.y), 0.0, fg.x);
+                xz.y += k * fg.z;
             }
             vec4 gm = uMaterial._IsoGlowMap;
             vec2 uv = vec2((xz.x - gm.x + 0.5) * gm.z, 1.0 - (xz.y - gm.y + 0.5) * gm.w);
@@ -526,7 +529,7 @@ void main()
 #ifndef USE_TEXTURE
             bool round = vUv.x > 2048.0;   // a head's skin, the hair (SmoothFigures.RoundBit): smooth, never stepped
 #else
-            bool round = false;
+            bool round = roundTex;
 #endif
             if (toon.x > 1.5 && !round)
             {

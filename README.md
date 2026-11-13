@@ -1,39 +1,39 @@
-# IsoRim Material and LOD 0.3.2
+# IsoRim Material and LOD 0.4.0
 
 作者 / Author：**水表狂魔**（GitHub: muziyue707-sys）。
 
-**公开版本 0.3.2 / Public release 0.3.2** — [Steam 创意工坊 / Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3835669507) · [下载发布包 / Download package](packages/IsoRim-MaterialLOD-0.3.2-release.zip) · [安装说明 / Installation](API61-INSTALL.md)
+**0.4.0 — dynamic material/LOD service and API77 compatibility.** [Current acceptance](review/dynamic040-validation.md) · [Release package](packages/IsoRim-MaterialLOD-0.4.0-release.zip). The 0.3.2 baseline remains in [its historical package](packages/IsoRim-MaterialLOD-0.3.2-release.zip).
 
-工坊 IsoRim 已更新到本版适配的 API 61，DLL 与通过运行验证的版本一致。直接订阅并更新 IsoRim Waylith 和本扩展即可，无需手动安装 GitHub 版。若此前安装过本地 IsoRim，请停用重复副本。模型包仍需明确配置法线材质和 LOD；本框架不会自动替换全部建筑。
+[Steam 创意工坊 / Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3835669507) · [安装 / Installation](INSTALL.md) · [动态服务 / Dynamic service](DYNAMIC.md)
 
-中文／English 发布素材：主 Mod 与示例包的 About 提供双语说明；[workshop/locales/](workshop/locales/) 分别维护简体中文与英文工坊标题、正文，由 Steam 按语言偏好显示；封面和详情图共用。实际工坊编号见 mod/About/PublishedFileId.txt。Separate English and Simplified Chinese Workshop metadata follows the visitor's Steam language preference. The real Workshop ID is retained in mod/About/PublishedFileId.txt; publication receipts and remote verification are recorded separately.
+为普通静态建筑提供烘焙法线与两／三档 LOD，并为主动接入的动态模型包提供通用法线／局部 AO 材质、缓存、私有材质生命周期和 LOD 选择服务。本 Mod 不依赖 Vehicles.dll，不解释车辆迷彩、炮塔、后坐或升级；这些仍由载具适配包处理。
 
-Independent RimWorld 1.7 addon for static building normal maps and two/three-level LOD. All material defs, IMB1 sidecar parsing, PNG loading, shaders, caches, thresholds, hysteresis and scheduling live here. Uses documented IsoRim API only: no Harmony reference, patches or private reflection.
+兼容载具包可独立显示基础迷彩 3D 模型；启用本 Mod 后才使用它提供的烘焙法线效果与自动 LOD。未接入的模型不会自动获得增强效果。本框架不生成模型／法线贴图，不自动减面。
 
-This release supports ordinary static buildings on IsoRimZ ground and upper floors. The viewed floor uses screen-size LOD; visible lower floors default to the lowest supplied LOD (optional in Mod settings). Hidden rows suspend LOD projection/switching; peeked floors remain active. See [FLOORS.md](FLOORS.md) for policy, cache and scheduling boundaries, and [review/api61-validation.md](review/api61-validation.md) for current evidence.
+Independent RimWorld 1.7 addon for static building normal maps and two/three-level LOD, plus an optional dynamic material/LOD service for explicitly integrated model packs. No Vehicles.dll dependency, Harmony patches or private reflection in production. Vehicle paint interpretation, motion, upgrades and gameplay remain in the consuming adapter. Without this addon, a compatible vehicle pack retains its own base camouflage 3D renderer at LOD0; with it, baked normal effects and automatic LOD are provided through the optional service.
 
-Requires the author's merged **API 61** build at `peren717/IsoRim-1.7@75e80b98e19cb2b754d40cf6bb908dfd2a28277d`. The API is now in `Source/Api61.cs` and `Docs/Api.md` part 42. As rechecked on 2026-11-08, updated Workshop IsoRim now supplies API 61 with the exact runtime-tested DLL and matching runtime resources (text line endings aside). This release supports Workshop installation; no manual GitHub installation is required. See [API61-INSTALL.md](API61-INSTALL.md). The exact published host DLL hash remains enforced; mismatches warn and disable the addon.
+Static buildings support IsoRimZ ground/upper floors: viewed-floor screen-size LOD, optional lowest supplied LOD on visible lower floors, no hidden-floor projection/switching, and active peeked-floor handling. Dynamic consumers handle their own visibility and lifecycle; the static section scheduler is not used for vehicles.
 
-## 0.3.2 shader fix / 着色器修复
+## Compatibility and build
 
-同步 IsoRim `3a5697e` 的逐像素眼睛方向修复，避免透视和第一人称视角下侧面法线不稳定翻转造成斑点；轮廓光使用相同方向。正交视角保留原逻辑，API、参数绑定、LOD 策略和资产格式不变。
+Current reviewed host: Workshop IsoRim **API77**, DLL SHA256 `D59E865930817D4D386F7CF3D582DFBC39E0046EDDF74F9775F01D0A2896B199`, figure shader contract **1**. Static integration uses API61; dynamic material/drawing uses API62 with API64 release. The exact DLL guard remains. Do not remove it to force a new host update.
 
-Ports IsoRim `3a5697e` to the addon shader: face-normal orientation and rim lighting use the per-fragment eye direction in perspective and first person. Orthographic behavior, API bindings, LOD policy and asset formats remain unchanged. See [validation](review/shader032-validation.md).
+Build against the author-published binary:
 
-## Build and install
+```powershell
+./scripts/Build.ps1 -IsoRimSource <Workshop-IsoRim-root> -PrebuiltHostDll <Workshop-IsoRim-root>/1.7/Assemblies/IsoRim.dll
+```
 
-Build against the author's actual released DLL, not a separately compiled lookalike: `scripts/Build.ps1 -PrebuiltHostDll <IsoRim/1.7/Assemblies/IsoRim.dll>`. PowerShell 7/Roslyn and local game references are required. This regenerates the exact hash pin, compiles the independent addon and isolated tests. Use `-IsoRimSource` for source builds when deliberately testing another host. Game/host assemblies are never redistributed.
+Build.ps1 regenerates the reviewed host pin and compiles the addon and isolated tests. Do not run it against an unreviewed host as a substitute for compatibility validation. No game/host DLL is distributed.
 
-The 0.3.2 package targets API 61. Older 0.3.0 archives remain historical candidates. [Current validation](review/api61-validation.md) describes acceptance against the author's published binary. The host's row view is now read-only and can report invisible until its first rendered frame; the addon keeps asking on later updates.
+Install `mod/`; `example/` is the optional 44/28/12-triangle crate. `tests/` is an isolated-profile-only harness and is excluded from the production mod. See [MATERIALS.md](MATERIALS.md), [LOD.md](LOD.md), [FLOORS.md](FLOORS.md), and [DYNAMIC.md](DYNAMIC.md). Existing static MaterialDef/LodDef names are unchanged.
 
-Install the matching author-published host separately, then mod/ as a mod. example/ is the optional 44/28/12-triangle crate pack. Replace the old 0.2 addon if installed; both use packageId shuib.rimzrism.materials. tests/ is a destructive, isolated-profile-only acceptance harness, excluded from the release mod.
+## Scope and evidence
 
-Configuration retains RimZrism.Materials.MaterialDef and RimZrism.Materials.LodDef. See example/Defs, MATERIALS.md and LOD.md. Normal PNGs are linear data, Blender/OpenGL +Y by default. flipNormalV controls row orientation independently of flipGreen.
+0.4.0 service contract and current acceptance: [handoff](review/dynamic-service-handoff-20261114.md). Earlier runtime evidence is historical: [0.3.2 camera/floor regression](review/shader032-validation.md), [API61 acceptance](review/api61-validation.md). Earlier tests do not prove this candidate or a full vehicle integration.
 
-## Limits and attribution
+No automatic decimation, full PBR, LOD crossfade, shadow LOD or promised FPS/VRAM gains. Dynamic textures are shared per session, not evicted on every LOD switch. Each private enhanced material is unregistered and safely retired after release. The dynamic draw API does not batch submissions.
 
-Ordinary immutable static OBJ buildings only. No automatic decimation, crossfade, texture eviction, shadow LOD, full PBR, or moving vehicles/doors/characters. LOD state is not saved; the optional lower-floor quality setting is stored in the mod configuration. VALIDATION.md records the original candidate's gates; review/floor-validation.md records the floor-support revision. Triangle reduction and skipped LOD work are not FPS results.
+Custom shaders remain our responsibility. The public figure shader contract stabilizes its listed names/bindings; copied lighting and clipping code still requires review after host updates. Mismatches and asset rejection warn and preserve the consumer's fallback. Shader MIT notices remain in `mod/LICENSE-IsoRim.txt`; new code is MIT. Dynamic rigid-basis/paint/AO code derives from this project's vehicle-pack 0.2.3, author 水表狂魔.
 
-Custom shaders remain this addon's responsibility. IsoRim does not promise a stable internal shader ABI (vertex attributes, lighting uniforms or clipping tags). A shader update may require adaptation and revalidation. The exact host hash guard remains; mismatch and rejected asset data warn and retain native rendering rather than reporting red errors.
-
-Shaders derive from current IsoRim IsoRimTex.vert.glsl and IsoRimSolid.frag.glsl. MIT notices are preserved in mod/LICENSE-IsoRim.txt. New code is MIT. The example reuses the project's previously baked crate; no Blender assets were changed for this refactor.
+English and Simplified Chinese Workshop metadata lives in `workshop/locales/`; Steam selects language by visitor preference. Cover/gallery are retained. Publication receipts and exact content hashes are recorded in the handoff.

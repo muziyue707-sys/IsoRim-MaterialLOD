@@ -1,0 +1,184 @@
+{
+  "service_contract": 1,
+  "publication": "PASS",
+  "files": [
+    {
+      "sha256": "d99d19497cca36da0b0b86df40ffe697e6ed9788ac2e7d3b29afb4095b3127bf",
+      "path": "mod/Assemblies/IRME.dll"
+    },
+    {
+      "sha256": "74711bb2be6550ea6ca919b0b22e166005414a78c72f017e71ca8044b3abc612",
+      "path": "mod/Shaders/IRME_Dynamic.frag.glsl"
+    },
+    {
+      "sha256": "ff1db09f82da6ae64cb31362def864034aada4b6c92935459df5af95aaf202d6",
+      "path": "mod/Shaders/IRME_Dynamic.vert.glsl"
+    },
+    {
+      "sha256": "fddede7f28f9ae02e00aa9a9d7db1fabf73c73025ef4e0aa74a4683abddb4e93",
+      "path": "mod/Shaders/IRME.frag.glsl"
+    },
+    {
+      "sha256": "b2d17741eebbf09a7242ad928344f791d72eb2d42dde0631bafef5e1baa1057f",
+      "path": "mod/Shaders/IRME.vert.glsl"
+    },
+    {
+      "sha256": "02a2e12ac4c0e6d5e5305278e457d5b0e879aee171a7a1465bb7bdf10b8a599f",
+      "path": "mod/Source/Compatibility.cs"
+    },
+    {
+      "sha256": "1aaf8cf5727cb50e8c2e5cd3f73ddd9189179949261e1547da09c6975caa63b9",
+      "path": "mod/Source/DynamicService.cs"
+    },
+    {
+      "sha256": "aa491d43735dfe2cb7be7231f19dabf26fe5f17231ea6ba7609954abeb47123f",
+      "path": "mod/Source/IRME.csproj"
+    },
+    {
+      "sha256": "c025b4cbd6ffc76db4f8d2c9f9371bf8621a970a1e6218e00c981a4c194301a8",
+      "path": "mod/Source/Lod.cs"
+    },
+    {
+      "sha256": "64ce2de914a1e9bdb9bd633c7c79f5a684af9d515058f56c92b8b03d5fdb6ef6",
+      "path": "mod/Source/Materials.cs"
+    },
+    {
+      "sha256": "f8730d6896d68840d15200be31638a34f6ab6156167be478db45ff4747f8862b",
+      "path": "mod/Source/Settings.cs"
+    }
+  ],
+  "api": 77,
+  "version": "0.4.0",
+  "figure_contract": 1,
+  "joint": {
+    "runs": [
+      {
+        "run": "base02",
+        "assertions": 294,
+        "protectedFiles": 5837
+      },
+      {
+        "run": "enhanced01",
+        "assertions": 302,
+        "protectedFiles": 5837
+      }
+    ],
+    "pass": true,
+    "runtimeDllAndShadersMatch": true
+  },
+  "date": "2026-11-14",
+  "host_sha256": "D59E865930817D4D386F7CF3D582DFBC39E0046EDDF74F9775F01D0A2896B199",
+  "runs": [
+    {
+      "assertions": 160,
+      "protection": {
+        "protected": {
+          "changed": [],
+          "files": 732,
+          "pass": true,
+          "missing": []
+        },
+        "workshop": {
+          "changed": [],
+          "files": 3171,
+          "pass": true,
+          "missing": []
+        }
+      },
+      "pass": true,
+      "run": "dynamic-run040-01"
+    },
+    {
+      "assertions": 64,
+      "protection": {
+        "workshop": {
+          "pass": true,
+          "missing": [],
+          "files": 3171,
+          "changed": []
+        },
+        "protected": {
+          "pass": true,
+          "missing": [],
+          "files": 732,
+          "changed": []
+        }
+      },
+      "pass": true,
+      "run": "lod-run040-01"
+    },
+    {
+      "assertions": 106,
+      "protection": {
+        "protected": {
+          "missing": [],
+          "changed": [],
+          "files": 732,
+          "pass": true
+        },
+        "workshop": {
+          "missing": [],
+          "changed": [],
+          "files": 3171,
+          "pass": true
+        }
+      },
+      "pass": true,
+      "run": "floor-run040-01"
+    }
+  ],
+  "package": {
+    "path": "IsoRim-MaterialLOD-0.4.0-release.zip",
+    "bytes": 2934529,
+    "sha256": "688ff99886886a71093d6cc5446169dae385e0be5c53f2fe4bd864ac805896f9",
+    "crc": "PASS",
+    "dllMatches": true
+  },
+  "remote": {
+    "id": 3835669507,
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3835669507",
+    "result": "k_EResultOK",
+    "title": "IsoRim Material & LOD",
+    "visibility": "k_ERemoteStoragePublishedFileVisibilityPublic",
+    "previewCount": 3,
+    "dependencies": [
+      3819577715
+    ],
+    "bytes": 2932821,
+    "ownerMatches": true,
+    "descriptionMatches": true,
+    "banned": false
+  },
+  "locales": [
+    {
+      "id": 3835669507,
+      "language": "english",
+      "result": "k_EResultOK",
+      "title": "IsoRim Material & LOD",
+      "titleMatches": true,
+      "descriptionMatches": true,
+      "visibility": "k_ERemoteStoragePublishedFileVisibilityPublic",
+      "previewCount": 3,
+      "dependencies": [
+        3819577715
+      ],
+      "bytes": 2932821,
+      "contentSizeUnchanged": true
+    },
+    {
+      "id": 3835669507,
+      "language": "schinese",
+      "result": "k_EResultOK",
+      "title": "IsoRim 材质与细节分级",
+      "titleMatches": true,
+      "descriptionMatches": true,
+      "visibility": "k_ERemoteStoragePublishedFileVisibilityPublic",
+      "previewCount": 3,
+      "dependencies": [
+        3819577715
+      ],
+      "bytes": 2932821,
+      "contentSizeUnchanged": true
+    }
+  ]
+}

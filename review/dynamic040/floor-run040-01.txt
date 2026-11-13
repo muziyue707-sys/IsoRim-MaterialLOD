@@ -1,0 +1,128 @@
+PASS: real IsoRimZ three-floor map loaded
+PASS: addon enabled with exact candidate host pin
+PASS: production addon references neither Harmony nor ProjectZ internals
+PASS: static API stays active while floors are drawn
+PASS: floor 0 LOD=0 actual=0/0
+PASS: upper/ground section uploads full normal and tangent arrays
+PASS: normal material is present on floor 0
+PASS: 258 real, non-overlapping upper-floor buildings remain spawned
+PASS: 258 upper-floor models start hidden with zero LOD projections
+PASS: at most two addon LOD section invalidations per frame
+PHASE ground_near checks=59 switches=0 dirty=0 rows=65626
+PASS: static API stays active while floors are drawn
+PASS: floor 1 LOD=0 actual=0/0
+PASS: floor 0 LOD=2 actual=2/2
+PASS: upper/ground section uploads full normal and tangent arrays
+PASS: normal material is present on floor 1
+PASS: public row view matches real ProjectZ row shift
+PASS: floor offset stays in true height units
+PASS: LOD projection agrees with native floor draw matrix in current camera mode
+PASS: at most two addon LOD section invalidations per frame
+PHASE upper_near_lower_coarse checks=96 switches=1 dirty=1 rows=105697
+PASS: static API stays active while floors are drawn
+PASS: floor 1 LOD=1 actual=1/1
+PASS: at most two addon LOD section invalidations per frame
+PHASE upper_mid checks=132 switches=2 dirty=2 rows=145179
+PASS: static API stays active while floors are drawn
+PASS: floor 1 LOD=2 actual=2/2
+PASS: at most two addon LOD section invalidations per frame
+PHASE upper_far checks=167 switches=3 dirty=3 rows=170639
+PASS: static API stays active while floors are drawn
+PASS: floor 1 LOD=0 actual=0/0
+PASS: floor 0 LOD=2 actual=2/2
+PASS: upper/ground section uploads full normal and tangent arrays
+PASS: normal material is present on floor 1
+PASS: public row view matches real ProjectZ row shift
+PASS: floor offset stays in true height units
+PASS: LOD projection agrees with native floor draw matrix in current camera mode
+PASS: at most two addon LOD section invalidations per frame
+PHASE upper_return checks=203 switches=4 dirty=4 rows=209019
+PASS: static API stays active while floors are drawn
+PASS: upper floor hidden
+PASS: at most two addon LOD section invalidations per frame
+PHASE upper_hidden checks=239 switches=5 dirty=5 rows=249470
+PASS: static API stays active while floors are drawn
+PASS: hidden floors: ZERO extra projections while camera changes
+PASS: hidden floor keeps cached mesh instead of rebuilding to a distant LOD
+HIDDEN rowsSkipped=260405 projectionDelta=0 allVisibleSwitches=9
+PASS: at most two addon LOD section invalidations per frame
+PHASE hidden_camera_changes checks=275 switches=14 dirty=14 rows=282834
+PASS: static API stays active while floors are drawn
+PASS: floor 1 LOD=0 actual=0/0
+PASS: peeked floor counts as visible
+PASS: upper/ground section uploads full normal and tangent arrays
+PASS: custom material participates in native floor fade
+PASS: fade clone retains shared normal texture
+PASS: normal material is present on floor 1
+PASS: at most two addon LOD section invalidations per frame
+PHASE peek_upper checks=8566 switches=15 dirty=15 rows=318345
+PASS: static API stays active while floors are drawn
+PASS: releasing peek hides upper floor again
+PASS: at most two addon LOD section invalidations per frame
+PHASE peek_off checks=9593 switches=15 dirty=15 rows=358397
+PASS: static API stays active while floors are drawn
+PASS: floor 2 LOD=0 actual=0/0
+PASS: floor 1 LOD=2 actual=2/2
+PASS: floor 0 LOD=2 actual=2/2
+PASS: upper/ground section uploads full normal and tangent arrays
+PASS: normal material is present on floor 2
+PASS: at most two addon LOD section invalidations per frame
+PHASE top_floor checks=17823 switches=17 dirty=17 rows=391913
+PASS: static API stays active while floors are drawn
+PASS: floor 1 LOD=0 actual=0/0
+PASS: floor 0 LOD=0 actual=0/0
+PASS: lower-floor quality option restores screen-size policy
+PASS: at most two addon LOD section invalidations per frame
+PHASE lower_quality_option_off checks=26869 switches=19 dirty=19 rows=420527
+PASS: static API stays active while floors are drawn
+PASS: public row view matches real ProjectZ row shift
+PASS: floor offset stays in true height units
+PASS: LOD projection agrees with native floor draw matrix in current camera mode
+PASS: upper/ground section uploads full normal and tangent arrays
+PASS: normal material is present on floor 1
+PASS: at most two addon LOD section invalidations per frame
+PHASE perspective checks=27943 switches=19 dirty=19 rows=456399
+PASS: static API stays active while floors are drawn
+PASS: public row view matches real ProjectZ row shift
+PASS: floor offset stays in true height units
+PASS: LOD projection agrees with native floor draw matrix in current camera mode
+PASS: upper/ground section uploads full normal and tangent arrays
+PASS: normal material is present on floor 1
+PASS: at most two addon LOD section invalidations per frame
+PHASE rotated checks=28013 switches=19 dirty=19 rows=487046
+PASS: static API stays active while floors are drawn
+PASS: at most two addon LOD section invalidations per frame
+PHASE indoor_night checks=28085 switches=19 dirty=19 rows=525369
+PASS: static API stays active while floors are drawn
+PASS: at most two addon LOD section invalidations per frame
+PHASE upper_fog checks=28157 switches=19 dirty=19 rows=565231
+PASS: static API stays active while floors are drawn
+PASS: at most two addon LOD section invalidations per frame
+PHASE upper_roof checks=28229 switches=19 dirty=19 rows=603516
+PASS: static API stays active while floors are drawn
+PASS: at most two addon LOD section invalidations per frame
+PHASE upper_slab checks=36269 switches=19 dirty=19 rows=641003
+PASS: static API stays active while floors are drawn
+PASS: at most two addon LOD section invalidations per frame
+PHASE slab_hidden checks=37367 switches=19 dirty=19 rows=680884
+PASS: static API stays active while floors are drawn
+PASS: at most two addon LOD section invalidations per frame
+PHASE before_save checks=37408 switches=20 dirty=20 rows=721069
+PASS: real IsoRimZ three-floor map loaded
+PASS: upper building HP/rotation saved and reloaded
+PASS: addon enabled with exact candidate host pin
+PASS: production addon references neither Harmony nor ProjectZ internals
+PASS: static API stays active while floors are drawn
+PASS: floor 1 LOD=0 actual=0/0
+PASS: floor 0 LOD=2 actual=2/2
+PASS: upper/ground section uploads full normal and tangent arrays
+PASS: normal material is present on floor 1
+PASS: public row view matches real ProjectZ row shift
+PASS: floor offset stays in true height units
+PASS: LOD projection agrees with native floor draw matrix in current camera mode
+PASS: at most two addon LOD section invalidations per frame
+PHASE reloaded checks=61 switches=1 dirty=1 rows=66633
+PASS: static API stays active while floors are drawn
+PASS: hidden despawn pruned by bounded maintenance
+PASS: at most two addon LOD section invalidations per frame
+PHASE hidden_despawn checks=97 switches=2 dirty=2 rows=105462
